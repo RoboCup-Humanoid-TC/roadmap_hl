@@ -1,0 +1,58 @@
+* Documents required
+- RoadMap Classical
+- Critical path form (graph / abstract)
+- Motivations behind the RoadMap
+- History
+  - Refs to Jacky + Soroush paper
+- Listing data to be stored
+
+* RoadMap Classical content
+** Introduction
+- Aims
+  - Attracting new teams (newcomers to robotics and well-known research labs)
+    - Gameplay has to be interesting
+    - More representation in conferences/workshop
+  - Increasing representation of Humanoid league in research community
+  - Encourage variety
+- Changes organization:
+  - Changes:
+    - Event-driven changes
+    - Rule submission changes
+  - Type of change impacts delay of announcement
+    - 1Y change -> Minor impact for a
+    - 2Y change -> Serious impact for LOC and/or team
+    - 5Y change -> Major impact on design of robots
+** Scientific problematics
+- Motion control
+  - Ground type
+    - Artificial turf
+    - Real grass (risk of mud etc...)
+  - Task-driven dynamic locomotion
+  - Safely falling
+- Perception
+  - Color-encoded environment
+- Decision-making
+- Interaction with humans
+** RoadMap
+*** Leagues management
+- Division A / Division B
+- Freestyle League?
+- Conditions for discontinuing league
+  - Number of teams registered?
+  - Compatibility
+*** Field evolutions
+- Dimensions
+  - Important aspects
+    - Moving speed
+    - Kick power
+    - Kick accuracy (size of the goal with respect to field)
+- Outdoor
+- Real grass / field 
+
+** RoadMap updates and maintenance
+- Update every 1/2 year
+- Expiration date: 5 years
+  - Motivation: update scientific problematics
+** Related technologies
+* Critical path
+- To be written
