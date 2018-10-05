@@ -19,21 +19,54 @@
     - Event-driven changes
     - Rule submission changes
   - Type of change impacts delay of announcement
-    - 1Y change -> Minor impact for a
+    - 6M change -> Gameplay change, no impact on robot design or fields
     - 2Y change -> Serious impact for LOC and/or team
     - 5Y change -> Major impact on design of robots
+- Survey of current level
+  - Aim
+    - Allow event-driven roadmap
+    - Monitor leagues improvements
+  - Stored elements
+    - Belief of robots (loc/opponents/ball, with uncertainty)
+    - Measured positions (external cameras)
 ** Scientific problematics
 - Motion control
-  - Ground type
-    - Artificial turf
-    - Real grass (risk of mud etc...)
+  - Locomotion
+    - Difficult grounds
+      - Artificial turf
+      - Real grass (risk of mud etc...)
+    - Energy efficiency
+  - Stable highly dynamic motions
+    - E.g Kick
   - Task-driven dynamic locomotion
+    - Change of gaits
+    - Transition between motion
   - Safely falling
 - Perception
-  - Color-encoded environment
+  - Away from color-encoded environment
+  - Dynamic
+  - Embedded
+  - Outdoor
 - Decision-making
+  - Partial information
+  - Noisy information
+  - Incomplete/learned model
 - Interaction with humans
-** RoadMap
+  - Safety at playing with humans?
+** Short-term RoadMap
+*** 2019
+**** Competition
+- Adult size: 2P, 14.5 * 9m
+- Throw-in and corners: played autonomously as free kicks
+- Robustness: robots can only enter during stoppage of game
+**** Technical challenges
+- No changes?
+*** 2020
+**** Games
+- ...
+**** Technical challenges
+- ...
+** Game RoadMap
 *** Leagues management
 - Division A / Division B
 - Freestyle League?
@@ -46,9 +79,57 @@
     - Moving speed
     - Kick power
     - Kick accuracy (size of the goal with respect to field)
+  - Number players related to size
 - Outdoor
-- Real grass / field 
+  - 5Y Without rain
+    - Organization option: Game fields outside, Game fields inside
+    - Triggered when: field too big
+  - 5Y With rain
+- Real grass / field
+*** Gameplay
+- Extending Duration:
+  - Based on what events
+- Autonomous robots
+  - Removing handlers in adult-size <- Require fall impact success
+  - Removing WiFi
+- Robustness
+  - Removing all pick-ups
+- Offences
+  - Adding offsides
+    - Based on localization skill
+  - Which behaviors are accepted
+    - Mandatory to avoid 'failed' kicks before playing vs humans
+** Technical challenges RoadMap
+*** Static ball kick
+- High kick
+- Accurate kick from moving robot
+  - Robots move toward the ball and kicks toward a small goal
+  - Motivation:
+    - Transition between motions
+*** Dynamic ball kick
+- Kick from moving ball
+- Volley Kick
+  - Dynamic motion
+- Aerial Kick
+*** Dexterity
+- Dribbling (ball control)
+- Juggling
+- Grasping the ball (human-like hands)
+*** Robustness
+- Push-Up recovery
+- Reducing fall impact
+  - Minimizing max-force measured by pressure sensor (with respect to initial energy)
+*** Misc
+- Jump
 
+ 
+** Demos RoadMap
+- Aim:
+  - Provide opportunity to display unusual behaviors in less competitive context
+- Example
+  - Autonomous robot vs manually controled robots
+  - Robots and handlers playing together (only robots are allowed to score)
+  - ...
 ** RoadMap updates and maintenance
 - Update every 1/2 year
 - Expiration date: 5 years
