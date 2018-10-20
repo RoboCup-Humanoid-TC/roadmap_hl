@@ -41,7 +41,8 @@
   - Task-driven dynamic locomotion
     - Change of gaits
     - Transition between motion
-  - Safely falling
+  - Safely falling (for robot And human)
+  - Safe motions (no risk for other robots)
 - Perception
   - Away from color-encoded environment
   - Dynamic
