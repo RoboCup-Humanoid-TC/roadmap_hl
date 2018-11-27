@@ -1,0 +1,52 @@
+% This document contains a tentative of dependency diagram for the Humanoid League roadmap
+
+\tikzstyle{element}=[rectangle, draw=black, rounded corners, text centered,
+  anchor=north, text width=2cm, minimum height= 1cm]
+\tikzstyle{transitionNote}=[rectangle, right, rounded corners, %text left,
+  text width=3cm, minimum height= 1cm]
+\tikzstyle{dependency} = [->, thick]
+
+\begin{tikzpicture}[node distance=1cm, every node/.style={scale=0.6}]
+  % Locomotion
+  \node (Walking) [element] {Walking};
+  \node (Running) [element, below=of Walking] {Running};
+  \draw [dependency] (Walking) -- (Running);
+  % Falling column
+  % TODO: Still missing: Diving (goalie)
+  \node (StandingUp) [element,right=of Walking] {Falling and standing up};
+  % TODO: missing ball manipulation (hands + foot)
+  % Kicking (add the transition part (kick from walking / kick from running))
+  % Add the high kick?
+  \node (StaticKick) [element,right=of StandingUp] {Static Kick};
+  \node (RollingKick) [element, below=of StaticKick] {Kick from rolling ball};
+  \node (FlyingKick) [element, below=of RollingKick] {Kick from flying ball};
+  \draw [dependency] (StaticKick) -- (RollingKick);
+  \draw [dependency] (RollingKick) -- (FlyingKick);
+  % Perception
+  \node (BallDetection) [element,right=of StaticKick] {Ball detection};
+  \node (RollingBall) [element,below=of BallDetection] {Rolling ball tracking};
+  \node (FlyingBall) [element,below=of RollingBall] {Flying ball tracking};
+  \draw [dependency] (BallDetection) -- (RollingBall);
+  \draw [dependency] (RollingBall) -- (FlyingBall);
+  % Environment information
+  \node (SidePoles) [element,right=of BallDetection] {Side Poles};
+  \node (ColorCoded) [element,below=of SidePoles] {Colored objects};
+  \node (HumanLike) [element,below=of ColorCoded] {No colors};
+  \draw [dependency] (SidePoles) edge node [transitionNote] {2012: Side poles\\2013: Yellow goals} (ColorCoded) ;
+  \draw [dependency] (ColorCoded) edge node [transitionNote] {2015:\\White goals\\White ball} (HumanLike);
+  % Ground type (Carpet, Turf, outdoor ground)
+  \node (Carpet) [element,right=of SidePoles] {Carpet};
+  \node (Turf) [element,below=of Carpet] {Artificial turf};
+  \node (RealGrass) [element,below=of Turf] {Real grass};
+  \draw [dependency] (Carpet) edge node [transitionNote] {2015: 30mm turf} (Turf);
+  \draw [dependency] (Turf) -- (RealGrass);
+  
+  % TODO: Teamplay
+  \node (SidePoles) [element,right=of BallDetection] {Side Poles};
+  \node (ColorCoded) [element,below=of SidePoles] {Colored objects};
+  
+
+  % Cross category dependencies
+  \draw [dependency] (RollingBall) -- (RollingKick);
+  \draw [dependency] (FlyingBall) -- (FlyingKick);
+\end{tikzpicture}
