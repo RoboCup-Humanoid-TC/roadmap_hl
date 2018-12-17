@@ -41,9 +41,20 @@
   \draw [dependency] (Carpet) edge node [transitionNote] {2015: 30mm turf} (Turf);
   \draw [dependency] (Turf) -- (RealGrass);
   
-  % TODO: Teamplay
-  \node (SidePoles) [element,right=of BallDetection] {Side Poles};
-  \node (ColorCoded) [element,below=of SidePoles] {Colored objects};
+  % Nb players
+  \node (1player) [element,right=of Carpet] {1 vs 1};
+  \node (2players) [element,below=of 1player] {2 vs 2};
+  \node (3players) [element,below=of 2players] {3 vs 3};
+  \node (4players) [element,below=of 3players] {4 vs 4};
+  \node (6players) [element,below=of 4players] {6 vs 6};
+  \node (8players) [element,below=of 6players] {8 vs 8};
+  \node (11players) [element,below=of 8players] {11 vs 11};
+  \draw [dependency] (1player)  -- (2players);
+  \draw [dependency] (2players) -- (3players);
+  \draw [dependency] (3players) -- (4players);
+  \draw [dependency] (4players) -- (6players);
+  \draw [dependency] (6players) -- (8players);
+  \draw [dependency] (8players) -- (11players);
   
 
   % Cross category dependencies
