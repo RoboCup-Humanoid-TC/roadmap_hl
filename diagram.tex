@@ -2,6 +2,8 @@
 
 \tikzstyle{element}=[rectangle, draw=black, rounded corners, text centered,
   anchor=north, text width=2cm, minimum height= 1cm]
+\tikzstyle{researchTopic}=[rectangle, rounded corners,
+  anchor=north, minimum height= 1cm, font=\bfseries]
 \tikzstyle{transitionNote}=[rectangle, right, rounded corners, %text left,
   text width=3cm, minimum height= 1cm]
 \tikzstyle{dependency} = [->, thick]
@@ -55,11 +57,17 @@
   \draw [dependency] (4players) -- (6players);
   \draw [dependency] (6players) -- (8players);
   \draw [dependency] (8players) -- (11players);
-  
 
   % Cross category dependencies
   \draw [dependency] (RollingBall) -- (RollingKick);
   \draw [dependency] (FlyingBall) -- (FlyingKick);
+
+  % Research topics
+  \node (Motion) [researchTopic,text=violet] at ($(StandingUp) + (0,1)$) {Motion};
+  \draw [draw=violet] ($(Motion) - (3.4,6)$) rectangle ($(Motion) + (3.4,0.5)$);
+  
+  \node (Perception) [researchTopic,text=orange] at ($(BallDetection) + (1.25,1)$) {Perception};
+  \draw [draw=orange] ($(Perception) - (2.4,6)$) rectangle ($(Perception) + (2.4,0.5)$);
 \end{tikzpicture}
 
-%TODO: add removal of magnetometer
+%TODO: add removal of magnetometer ?
