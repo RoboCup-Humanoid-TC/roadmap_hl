@@ -1,5 +1,14 @@
 \documentclass{article}
 
+\usepackage[
+    backend=bibtex, 
+    natbib=true,
+    style=alphabetic,
+    citestyle=alphabetic,
+    maxcitenames=1,
+    maxbibnames=99
+]{biblatex}
+
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -9,6 +18,8 @@
 \usetikzlibrary{positioning}
 \usepackage{url}
 \usepackage{rotating}
+
+\addbibresource{roadmap.bib}
 
 \begin{document}
 
@@ -94,6 +105,43 @@ that the robots are falling.
 
 \subsection{Embedded perception}
 
+In order to act autonomously, robots require to be able to detect various
+objects such as the ball, opponents and goals. Agregation of information and
+filtering are also important in order to analyze the state of the game with a
+high accuracy.
+
+% Detection: from color based filters
+% TODO: add references toward 'DNN articles' and tagger
+% TODO: mention the semantic perception
+Until RoboCup 2015 where white goals and white balls were introduced, most of
+the object detection algorithms were based on color segmentation and shape
+recognition. Since color were removed, most of the teams moved toward machine
+learning methods such as deep neural network. In order to reduce the amount of
+work required to label the data, tools have been developed to allow multiple
+teams to mutualize their efforts toward producing dataset for the community. A
+specificity of the league with respect to the field of computer vision is the
+low computational power available, this constraint is shared by other robotics
+applications such as drones.
+
+% Localisation:
+% - Currently mainly based on filters
+% - Evolution 
+Currently, most of the localization modules are based on particle filters which
+allows to track multi-modal distributions. While these approaches have proved
+their efficiency, recent advances in the SLAM domain suggest that localization
+based on factor graphs rather than filtering are more
+accurate~\cite{Strasdat2012}.
+
+% Calibration topic
+Most of the information used for localization relies on information provided by
+the camera. Therefore, estimating accurately the orientation of the camera is
+crucial to enhance the accuracy. During the last years, multiple teams have
+started to work on automated calibration of geometric errors in the robot model
+in order to increase the accuracy of the observation. This approaches are
+generally based on the use of visual markers easily detectable such as Aruco
+Tags~\cite{Garrido-Jurado2014}.
+
+
 \subsection{Decision-making}
 
 \subsection{Interaction with humans}
@@ -138,9 +186,15 @@ TODO:
 % TODO add emergency button
 
 \section{\label{sec:LongTerm}Long-term: event triggered roadmap}
+
+% TODO: Separate diagram in 2/3 different diagrams? Skills and rules?
+
+% TODO: explain the different reasons behind the 
+
 \begin{sidewaysfigure}
 \input{diagram.tex}
 \end{sidewaysfigure}
+
 
 \section{Evolution of the document}
 
@@ -152,6 +206,10 @@ TODO:
 
 % TODO: Summarizing rule changes?
 %\section{Past evolutions}
+
+\newpage
+
+\printbibliography
 
 
 \end{document}
