@@ -92,7 +92,6 @@
   - Based on what events
 - Autonomous robots
   - Removing handlers in adult-size <- Require fall impact success
-  - Removing WiFi
 - Robustness
   - Removing all pick-ups
 - Offences
@@ -122,7 +121,6 @@
   - Minimizing max-force measured by pressure sensor (with respect to initial energy)
 *** Misc
 - Jump
-
  
 ** Demos RoadMap
 - Aim:
