@@ -135,14 +135,28 @@ More recently several researchers have also applied online machine learning appr
 The aim of these approaches is to reduce errors in the kinematic and dynamic model of the robot.
 Another motivation for online learning is to compensate for faults in the robot. For example, a robot that damages one of its hip ervos may learn to adapt its motion during the match, so that it can still help its team albeit less effective than if it were in perfect working order.
 
-\subsubsection{Bipedal locomotion}
 
-% Historically:
-% ZMP -> Developed in 1970, still quite used today ``
-% Walking, walking on uneven terrain, running
+\subsection{Compliant Actuators and Soft Robotics}
 
-% RoboCup specificities:
-% - controlable walk (
+The most common technology for humanoid robotics use servo motors with spur gears as actuators.
+The MX, RX, X series products of Robotis Inc. are used by many teams in the humanoid league, especially in the kid and teen sized leagues.
+In the adult sized league, robots usually use actuators build from a combination of servo motors with additional gears to increase the torque.
+Several teams now also use harmonic drives (e.g., Robotis Dynamixel Pro series).
+
+The mechanical structures are stiff and built from aluminium or carbon fibres.
+
+Affordable servo motors have poor power to weight ratios and highly dynamic motions are severly limited due to insufficient power output.
+Currently, the robots in the humanoid robot league are unable to run.
+
+Furthermore, the first problem with these kind of robots is that it hard to see how these robots will ever be able to run dynamically.
+The high impact forces when landing would result in damage to the gear box.
+
+Researchers are actively investigating the use of compliant actuators or new actuation models (e.g., cycloid motors, linear actuators, artificial muscles)
+
+The second problem is that these kind of robots cannot safely operate in joint environments with humans, especially in soccer, where collissions between players occur frequently.
+
+Researchers are investigating protection of the robot mechanics, detection of entangling of robots, and soft materials to ensure that robots do not injure human players.
+The safe game play with humans does not only require improved mechanics, but also requires improvements in perception, reasoning, and actions.
 
 \subsubsection{Robustness and reduction of hardware cost}
 % - Robots walking all game long (usually, only for demo)
