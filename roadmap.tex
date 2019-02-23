@@ -110,8 +110,14 @@ that the robots are falling.
 Humanoid soccer robots perceive their environment exclusively through cameras. 
 Recent changes in the Humanoid League rules resulted in a soccer environment with less color-coded objects, which makes the perception of the game situation more challenging.
 The robots have to perceive the game situation in real-time under realistic conditions.
-The simple color segmentation and blob detection approaches that were quite popular in the past have become unsuitable, and many teams are using deep learning approaches now \cite{}. 
+The simple color segmentation and blob detection approaches that were quite popular in the past \cite{Farazi2015} have become unsuitable, and many teams are using deep learning approaches now \cite{ficht2018nimbro} \cite{schnekenburger2017detection}. 
 Aggregation of information and filtering the perception are also crucial to analyze the state of the game with high accuracy.
+
+
+To reduce the amount of work required to label the dataset for visual perception --- especially for data-hungry machine learning methods like deep learning --- tools have been developed to allow multiple teams to mutualize their efforts toward producing a dataset for the community \cite{imagetagger2018}.
+One of the scientific challenges which is specific to Humanoid robots, and other lightweight robots like drones, is the limited computational resources that are mainly due to weight limitations. 
+
+
 
 % Detection: from color based filters
 % TODO: add references toward 'DNN articles' and tagger
