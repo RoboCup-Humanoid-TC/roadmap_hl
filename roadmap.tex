@@ -168,27 +168,35 @@ The safe game play with humans does not only require improved mechanics, but als
 \subsubsection{Transition between motions}
 
 
-
 \subsection{Perception}
-
+\subsubsection{Visual Perception}
 Humanoid soccer robots perceive their environment exclusively through cameras. 
 Recent changes in the Humanoid League rules resulted in a soccer environment with less color-coded objects, which makes the perception of the game situation more challenging.
 The robots have to perceive the game situation in real-time under realistic conditions.
 The simple color segmentation and blob detection approaches that were quite popular in the past \cite{Farazi2015} have become unsuitable, and many teams are using deep learning approaches now \cite{ficht2018nimbro} \cite{schnekenburger2017detection}. 
 Aggregation of information and filtering the perception are also crucial to analyze the state of the game with high accuracy.
 
-
 To reduce the amount of work required to label the dataset for visual perception --- especially for data-hungry machine learning methods like deep learning --- tools have been developed to allow multiple teams to mutualize their efforts toward producing a dataset for the community \cite{imagetagger2018}.
 One of the scientific challenges which is specific to Humanoid robots, and other lightweight robots like drones, is the limited computational resources that are mainly due to weight limitations. 
 
-\begin{figure}[h]
-	\centering
-		\includegraphics[width=0.5\linewidth]{dso}\vspace{-1ex}
-	\caption{ Output sample of DSO on soccer field.}
-	\label{FigDSO}
-\end{figure}
+%TODO:talk about semantic perception
+%TODO:talk about object 6d pose estimation
+
+\subsubsection{Action Recognition and Prediction}
+%TODO:talk about goalie predicting kick direction based on the gesture of the kicker
+%Understanding referee gesture
 
 
+\subsubsection{Robot Detection and Identification}
+The use of a team of humanoid robots to collaborate in completing a task is an increasingly important field of research. 
+One of the challenges in achieving collaboration is mutual identification and tracking of the robots. One of the scientific challenges in visual perception is a real-time detection and tracking of robots of known and unknown appearance.
+Online humanoid robot detection, tracking, and identification are the foundations for good cooperation between the robots. 
+There are already some papers for this research topic in a humanoid soccer environment, using filtering \cite{farazi2016real}, and deep recurrent networks \cite{farazi2017online}.
+
+
+\subsubsection{Localization}
+Currently, most of the localization modules are based on particle filters which allow to track multi-modal distributions. 
+While these approaches have proved their efficiency, recent advances in the SLAM domain suggest that localization based on factor graphs rather than filtering are more accurate~\cite{Strasdat2012}.
 To add another source of information for supporting robot localization especially for when the robot is kidnapped, visual odometry can be considered.
 By utilizing the input of the camera system, the 6-DOF motion of the camera can be estimated. SVO 2.0 \cite{forster2014svo} and DSO \cite{engel2018direct} are two example of these approaches for monocular vision.
 A sample output of DSO on the soccer field in illustrated in Fig.~\ref{FigDSO}.
@@ -197,44 +205,26 @@ While DSO uses a direct approach based on pixel densities, SVO 2.0 additionally 
 When testing these approaches with smooth camera movements over short periods of time, both can calculate stable and accurate motion traces. 
 However, extended periods of time or abrupt and fast movements often lead to wrong results or complete failure of these systems. 
 One interesting research direction would be integrating IMU information into the visual odometry system to achieve more stable results.
+Almost all of the teams in the humanoid league try to solve the localization problem in 3-dimensions.To have more interesting planning, a 6D-localization would be desired.
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=0.5\linewidth]{dso}\vspace{-1ex}
+	\caption{ Output sample of DSO on soccer field.}
+	\label{FigDSO}
+\end{figure}
 
-The use of a team of humanoid robots to collaborate in completing a task is an increasingly important field of research. 
-One of the challenges in achieving collaboration is mutual identification and tracking of the robots. One of the scientific challenges in visual perception is a real-time detection and tracking of robots of known and unknown appearance.
-Online humanoid robot detection, tracking, and identification are the foundations for good cooperation between the robots. 
-There are already some papers for this research topic in a humanoid soccer environment, using filtering \cite{farazi2016real}, and deep recurrent networks \cite{farazi2017online}.
 
+\subsubsection{Dynamic Model Calibration}
+Most of the information used for localization relies on information provided by the camera. 
+Having the exact kinematic model of the robot is not always possible. 
+Therefore it is necessary to calibrate variations from the designed CAD model to prevent potentially large projection errors for distant objects. 
+A calibration of the kinematics on each robot that tunes translation and rotation offsets between the torso and the camera is required. 
+These offsets are crucial for a good performance of the pixel to egocentric coordinate projection algorithm.
+During the last years, multiple teams have started to work on automatic kinematic calibration. 
+These approaches are generally based on the use of visual markers easily detectable such as Aruco Tags~\cite{Garrido-Jurado2014}.
 
-
-% Detection: from color based filters
-% TODO: add references toward 'DNN articles' and tagger
-% TODO: mention the semantic perception
-Until RoboCup 2015 where white goals and white balls were introduced, most of
-the object detection algorithms were based on color segmentation and shape
-recognition. Since color were removed, most of the teams moved toward machine
-learning methods such as deep neural network. In order to reduce the amount of
-work required to label the data, tools have been developed to allow multiple
-teams to mutualize their efforts toward producing dataset for the community. A
-specificity of the league with respect to the field of computer vision is the
-low computational power available, this constraint is shared by other robotics
-applications such as drones.
-
-% Localisation:
-% - Currently mainly based on filters
-% - Evolution 
-Currently, most of the localization modules are based on particle filters which
-allows to track multi-modal distributions. While these approaches have proved
-their efficiency, recent advances in the SLAM domain suggest that localization
-based on factor graphs rather than filtering are more
-accurate~\cite{Strasdat2012}.
-
-% Calibration topic
-Most of the information used for localization relies on information provided by
-the camera. Therefore, estimating accurately the orientation of the camera is
-crucial to enhance the accuracy. During the last years, multiple teams have
-started to work on automated calibration of geometric errors in the robot model
-in order to increase the accuracy of the observation. This approaches are
-generally based on the use of visual markers easily detectable such as Aruco
-Tags~\cite{Garrido-Jurado2014}.
+\subsubsection{Verbal Commiunication}
+%TODO:talk about coach and referee understanding
 
 
 \subsection{Decision-making}
