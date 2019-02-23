@@ -18,6 +18,9 @@
 \usetikzlibrary{positioning}
 \usepackage{url}
 \usepackage{rotating}
+\usepackage{graphicx}            % For pdf/bitmapped graphics files
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg}
 
 \addbibresource{roadmap.bib}
 
@@ -116,6 +119,28 @@ Aggregation of information and filtering the perception are also crucial to anal
 
 To reduce the amount of work required to label the dataset for visual perception --- especially for data-hungry machine learning methods like deep learning --- tools have been developed to allow multiple teams to mutualize their efforts toward producing a dataset for the community \cite{imagetagger2018}.
 One of the scientific challenges which is specific to Humanoid robots, and other lightweight robots like drones, is the limited computational resources that are mainly due to weight limitations. 
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=0.5\linewidth]{dso}\vspace{-1ex}
+	\caption{ Output sample of DSO on soccer field.}
+	\label{FigDSO}
+\end{figure}
+
+
+To add another source of information for supporting robot localization especially for when the robot is kidnapped, visual odometry can be considered.
+By utilizing the input of the camera system, the 6-DOF motion of the camera can be estimated. SVO 2.0 \cite{forster2014svo} and DSO \cite{engel2018direct} are two example of these approaches for monocular vision.
+A sample output of DSO on the soccer field in illustrated in Fig.~\ref{FigDSO}.
+Both systems offer built-in support for integration into ROS and allow real-time processing of image data. 
+While DSO uses a direct approach based on pixel densities, SVO 2.0 additionally considers features for analyzing visual input. 
+When testing these approaches with smooth camera movements over short periods of time, both can calculate stable and accurate motion traces. 
+However, extended periods of time or abrupt and fast movements often lead to wrong results or complete failure of these systems. 
+One interesting research direction would be integrating IMU information into the visual odometry system to achieve more stable results.
+
+The use of a team of humanoid robots to collaborate in completing a task is an increasingly important field of research. 
+One of the challenges in achieving collaboration is mutual identification and tracking of the robots. One of the scientific challenges in visual perception is a real-time detection and tracking of robots of known and unknown appearance.
+Online humanoid robot detection, tracking, and identification are the foundations for good cooperation between the robots. 
+There are already some papers for this research topic in a humanoid soccer environment, using filtering \cite{farazi2016real}, and deep recurrent networks \cite{farazi2017online}.
 
 
 
