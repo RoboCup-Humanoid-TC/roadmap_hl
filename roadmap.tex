@@ -66,24 +66,71 @@ since the creation of the league.
 
 \section{\label{sec:Scientific_Challenges}Scientific Challenges}
 
-\subsection{Motion control for humanoid robots}
+\section{\label{sec:ScientificProblematics}Scientific Challenges}
+
+\subsection{Issues in Motion Generation and Control of Humanoid Robots}
 
 % Very brief history reminder
-The first humanoid robot to be built is the WABOT-1 which was completed in
-1972. While WABOT-1 was already able to walk, controlling humanoid robots remain
-a challenging problem today. From designing dynamic walking gait to running and
-real-time adaptation of multi-objective motions, motion control of humanoid
-robots is an active research topic.
+The first humanoid robot built was the WABOT-1 which was completed in 1972. 
+While WABOT-1 was already able to walk, controlling the walking gait of a humanoid robot a challenging problem today. 
+From designing dynamic walking gait to running and real-time adaptation of multi-objective motions, motion control of humanoid robots is an active research topic.
 
 % Focus of RoboCup : introduction
-While bipedal locomotion is one of the main interests of the RoboCup humanoid
-league, multiple dynamic motions are required such as standing-up and kicking
-the ball. Given the adversarial context of the RoboCup, one of the key elements
-is also the transition between different motions in order to reduce the time
-required to achieve complex tasks. Finally, one the major concern from a
-mechanical point of view are achieving satisfying performances while using
-low-cost hardware and ensuring the robustness of the hardware despite the fact
-that the robots are falling.
+While bipedal locomotion is still one of the main issues of the RoboCup humanoid
+league in 2019, other motions are also important. 
+At the moment these are mainly motions for standing up and kicking a ball on the ground.
+In the future, this will also include jumps, headers, volleys, and other highly dynamic motions.
+Given the adversarial nature of RoboCup, one of the key elements is also the transition between different motions in order to reduce the time required to achieve complex tasks. 
+Finally, a major concern from a mechanical point of view are achieving satisfying performances while using low-cost hardware and ensuring the robustness of the hardware despite the fact that the robots are falling.
+
+\subsubsection{Bipedal locomotion}
+
+% Historically:
+% ZMP -> Developed in 1970, still quite used today ``
+% Walking, walking on uneven terrain, running
+
+Most approaches to humanoid walking nowadays use the Zero Moment Point ZMP stability criterium first analyzed by Vukobratović et al [1].
+Vukobratović proved that the ZMP criterium is a sufficient condition for dynamic stability.
+
+Sugihara developed stable online walking trajectories using an inverted pendulum model.
+Many teams in the humanoid league have developed stable walking gaits in the forward directions or omni-directional walking engines [2].
+
+Just like in human soccer, collissions between players with players from the opposing or own team are common.
+The increased speed of the robots as well as the increased number of players on the field also necessitates that the robots can compensate for collissions (push recovery).
+Pratt et al. introduced capture steps to control a robot during push recovery after a collission [3].
+
+% [1] Vukobratović, Miomir, Branislav Borovac, and Dragoljub Šurdilović. "Zero moment point-Proper interpretation and new applications." Int. Conf. on Humanoid Robots. 2001.
+% [2] Sugihara, Tomomichi, Yoshihiko Nakamura, and Hirochika Inoue. "Real-time humanoid motion generation through ZMP manipulation based on inverted pendulum control." Proceedings 2002 IEEE International Conference on Robotics and Automation (Cat. No. 02CH37292). Vol. 2. IEEE, 2002.
+% [3] Pratt, Jerry, et al. "Capture point: A step toward humanoid push recovery." 2006 6th IEEE-RAS international conference on humanoid robots. IEEE, 2006.
+% 
+
+\subsubsection{Offline and Online Learning of Motions}
+% Several specific motions required (standing-up)
+
+Since the development of walking gaits and push recovery motions for humanoid robots is non-trivial and many approaches require complex models of the dynamics of the robot, there has been continuous interest in optimizing motions or even learn motions from scracth using machine learning.
+Many approaches to learning of motions have been explored by RoboCup teams and other researchers.
+Genetic algorithms [5], Support vector machines SVMs [6], artificial neural networks ANNs [7], cerebellar model articulation controllers CMACs [4], and reinforcement learning (RL) [9] have explored for learning trajectories for walking, push recovery, and other motions. 
+These approaches have led to some impressive results, in spite of the fact that applying these techniques to robotics domains is difficult since the perceptions, states, and actions of the robots are continuous, instead of the more common discreet representations (e.g., attribute-value representations).
+
+% [4] Sabourin, Christophe, and Olivier Bruneau. "Robustness of the dynamic walk of a biped robot subjected to disturbing external forces by using CMAC neural networks." Robotics and Autonomous Systems 51.2-3 (2005): 81-99.
+% [5] Huan, Tran Thien, Cao Van Kien, and Ho Pham Huy Anh. "Adaptive Evolutionary Neural Network Gait Generation for Humanoid Robot Optimized with Modified Differential Evolution Algorithm." 2018 4th International Conference on Green Technology and Sustainable Development (GTSD). IEEE, 2018.
+% [6] Wang, Liyang, et al. "Energy-efficient SVM learning control system for biped walking robots." IEEE transactions on neural networks and learning systems 24.5 (2013): 831-837.
+% [7] Kim, Dong W., Nak-Hyun Kim, and Gwi-Tae Park. "ZMP based neural network inspired humanoid robot control." Nonlinear Dynamics 67.1 (2012): 793-806.
+% [9] Morimoto, Jun, et al. "A simple reinforcement learning algorithm for biped walking." IEEE International Conference on Robotics and Automation, 2004. Proceedings. ICRA'04. 2004. Vol. 3. IEEE, 2004.
+
+In recent years, many areas of Artificial Intelligence have been revolutionized by deep learning approaches.
+Deep learning approaches have also been used increasingly by other humanoid robotics researchers and RoboCup participants [8].
+
+% [8] Hwangbo, Jemin, et al. "Learning agile and dynamic motor skills for legged robots." Science Robotics 4.26 (2019): eaau5872.
+
+Early approaches focused on offline learning approaches, where the motions of the robots are learned prior to a competition.
+The training data is usually labelled training data from actual experiments with the robot.
+Several algorithms also seed the learning of the robot using synthetic training data generated from simulation or a combination of real-world and simulation data.
+Deep learning approaches in general have a higher sample complexity and the generation of good training data is therefore challenging.
+
+More recently several researchers have also applied online machine learning approaches, that is the system learns to optimize its motions during game play.
+The aim of these approaches is to reduce errors in the kinematic and dynamic model of the robot.
+Another motivation for online learning is to compensate for faults in the robot. For example, a robot that damages one of its hip ervos may learn to adapt its motion during the match, so that it can still help its team albeit less effective than if it were in perfect working order.
 
 \subsubsection{Bipedal locomotion}
 
