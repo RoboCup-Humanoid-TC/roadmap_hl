@@ -51,12 +51,29 @@
   \node (6players) [element,below=of 4players] {6 vs 6};
   \node (8players) [element,below=of 6players] {8 vs 8};
   \node (11players) [element,below=of 8players] {11 vs 11};
-  \draw [dependency] (1player)  -- (2players);
-  \draw [dependency] (2players) -- (3players);
-  \draw [dependency] (3players) -- (4players);
+  \draw [dependency] (1player)  edge node [transitionNote] {2019: Adult Size} (2players);
+  \draw [dependency] (2players) edge node [transitionNote] {2016 or 2017: Teen Size} (3players);
+  \draw [dependency] (3players) edge node [transitionNote] {2014: Kid Size} (4players);
   \draw [dependency] (4players) -- (6players);
   \draw [dependency] (6players) -- (8players);
   \draw [dependency] (8players) -- (11players);
+
+  % Field sizes
+  \node (6by4) [element,right=of 1player]{$6 \times 4$};
+  \node (9by6) [element ,below=of 6by4]{$9 \times 6$};
+  \node (14by9) [element,below=of 9by6]{$14 \times 9$};
+  \node (23by15) [element,below=of 14by9]{$23 \times 15$};
+  \node (34by23) [element,below=of 23by15]{$34 \times 23$};
+  \node (50by34) [element,below=of 34by23]{$50 \times 34$};
+  \node (75by50) [element,below=of 50by34]{$75 \times 50$};
+  \node (105by70) [element,below=of 75by50]{$105 \times 70$};
+  \draw [dependency] (6by4) edge node [transitionNote] {2011: Teen Size\\2012: Adult Size\\2014: Kid Size} (9by6);
+  \draw [dependency] (9by6) edge node [transitionNote]  {2019: Adult Size} (14by9);
+  \draw [dependency] (14by9) -- (23by15);
+  \draw [dependency] (23by15) -- (34by23);
+  \draw [dependency] (34by23) -- (50by34);
+  \draw [dependency] (50by34) -- (75by50);
+  \draw [dependency] (75by50) -- (105by70);
 
   % Cross category dependencies
   \draw [dependency] (RollingBall) -- (RollingKick);
@@ -71,4 +88,3 @@
 \end{tikzpicture}
 
 %TODO: add removal of magnetometer ?
-%TODO: add field size
