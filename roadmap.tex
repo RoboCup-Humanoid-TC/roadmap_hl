@@ -107,10 +107,11 @@ that the robots are falling.
 
 \subsection{Perception}
 
-In order to act autonomously, robots require to be able to detect various
-objects such as the ball, opponents and goals. Agregation of information and
-filtering are also important in order to analyze the state of the game with a
-high accuracy.
+Humanoid soccer robots perceive their environment exclusively through cameras. 
+Recent changes in the Humanoid League rules resulted in a soccer environment with less color-coded objects, which makes the perception of the game situation more challenging.
+The robots have to perceive the game situation in real-time under realistic conditions.
+The simple color segmentation and blob detection approaches that were quite popular in the past have become unsuitable, and many teams are using deep learning approaches now \cite{}. 
+Aggregation of information and filtering the perception are also crucial to analyze the state of the game with high accuracy.
 
 % Detection: from color based filters
 % TODO: add references toward 'DNN articles' and tagger
