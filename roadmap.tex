@@ -261,16 +261,86 @@ There are also some minor adjustements:
 
 \subsection{RoboCup 2020 changes}
 
-TODO: 
+The process of updating the roadmap allowed to identify immediate changes which
+could benefit the humanoid league.
+One of the most important element is the organization of the league. Since 2010,
+the league is composed of 3 leagues, KidSize, TeenSize and AdultSize.
+While this structure was adapted at that time, evolution of the field and of the
+teams at the RoboCup over the past years show that there are way for improvements.
+
+For RoboCup2020, we intend to bring major modification to the league structure
+in order to achieve the following objectives:
+allow more diversity in the league,
+increase the coherency of the structure with actual status of the competition
+and finally propose a more flexible structure which can be easily adapted.
+
+The scheduled changes are as follows:
 \begin{itemize}
-\item Introduce Open Humanoid Leagues
-\item Introduce Demo Events
-\item New formula with Drop-In as seeding for Division A/Division B
-\item Merge of Kid and Teen
-\item Updates of technical challenges?
+\item Restructuring regular tournament
+\item Open Humanoid Leagues
+\item Humanoids Demo Events
+\item Update of the technical challenges
 \end{itemize}
 
-% TODO add emergency button
+This section starts by describing the changes and then summarize the impacts on
+organization.
+
+% TODO add emergency button (safe robotics) ?
+
+\subsubsection{Restructuring regular tournament}
+
+While the number of teams involved in the TeenSize league has globally increased
+since 2010, the height of the robots in this league is globally decreasing and
+entering the buffer zone between KidSize (max 90cm) and TeenSize(min 80cm).
+\begin{description}
+\item[RoboCup 2017:] 5 teams had robots larger than 90cm.
+\item[RoboCup 2018:] Only 1 team had a robot above 90cm (94cm).
+\item[RoboCup 2019:] According to the qualification material, all teams have
+  robots between 80 and 90cm.
+\end{description}
+
+In regard of these elements, we propose to integrate the small robots from
+TeenSize to the KidSize and the larger robots to the AdultSize.
+
+Increasing the number of participants in each league would also make it easier
+to separate the main league in two divisions, allowing experienced teams to have
+more competitive games and new teams to have a more interesting event.
+It would also be interesting to increase the average number of robots on
+the pitch without loosing teams du to financial issues.
+Finally, while Drop-In games has triggered the interest of multiple teams,
+some teams find that it overloads the schedule, especially during the knock-out
+phases.
+
+In order to solve these problems, the tournament will use the following
+structure:
+\begin{enumerate}
+\item The tournament will start by all the Drop-In games. This phase will
+  require only one robot per team.
+\item Teams who have not the maximum number of robots allowed for their league
+  are required to form combined teams in order to form a full team of robots.
+\item If there are less than 16 teams in the league after the merge procedure,
+  all teams play in division A.
+  If there are more than 16 merged teams, repartition of the teams is based
+  on the result of the teams during Drop-In games and play-off games.
+  \begin{description}
+  \item[Division A:] Best 6 teams + winners of play-offs for teams 7-10.
+  \item[Division B:] Losers from play-offs teams 7-10, teams 11-20,
+    winners of play-offs for teams 21-28.
+  \end{description}
+\end{enumerate}
+
+This structure ensures that teams who have a single robot can participate and
+play a fair number of games.
+Teams with more resources are allowed to present a full team in order to work
+on their teamplay during the year.
+Finally, this method ensures that the fields will have the appropriate number
+of robots, from the Drop-In to the regular tournaments.
+
+\subsection{Open Humanoid Leagues}
+
+\subsection{Humanoids Demo Events}
+
+\subsection{Update of the technical challenges}
 
 \section{\label{sec:LongTerm}Long-term: event triggered roadmap}
 
