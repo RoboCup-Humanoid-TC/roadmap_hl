@@ -334,7 +334,7 @@ on their teamplay during the year.
 Finally, this method ensures that the fields will have the appropriate number
 of robots, from the Drop-In to the regular tournaments.
 
-\subsection{Open Humanoid Leagues}
+\subsubsection{Open Humanoid Leagues}
 
 Current implementation as led to some constraints on robot design~(passive
 sensors, size limitations) and complex rules in order to ensure fair games and
@@ -349,7 +349,7 @@ implementation details will be chosen depending on the teams interested by this
 competition.
 Trophies will be awarded to the teams according to the same rules as regular leagues.
 
-\subsection{Humanoids exhibition events}
+\subsubsection{Humanoids exhibition events}
 
 Increasing the diversity of approaches used inside the league and broadening the
 views of participants is important to avoid stagnation and uniformity in design.
@@ -367,8 +367,23 @@ Constraints on the exhibitions will be avoided in order to allow original
 elements, no awards will be provided in order to keep it as a competition-free
 event.
 
+\subsubsection{Update of the technical challenges}
 
-\subsection{Update of the technical challenges}
+From 2020, it will be mandatory for teams to have multiple robots in their team
+or to merge with other teams for the regular tournament.
+Therefore, we will start introducing technical challenges requiring collaboration between robots.
+
+One of the current challenges is based on performing a kick on the goal from a moving ball.
+Currently, the pass can be performed by either a robot or a human.
+In 2020, pass will have to be performed by a robot.
+By enforcing this as a technical challenge we intend to promote dynamic gameplay.
+
+The high-jump challenge will be changed toward a landing challenge which will
+focus on absorbing shocks and thus on soft robotics.
+
+On the same trend, a standing-up challenge will be introduced for adult size robots.
+This technical challenge will then evolve toward falling robots with the aim of removing
+robot handlers on the long-term.
 
 \section{\label{sec:LongTerm}Long-term: event triggered roadmap}
 
@@ -410,9 +425,60 @@ rulebook.
 \end{description}
 
 % TODO: Is change based on 'best team', 'n best teams' or something else?
+% - From workshop: at least 3 teams from the semi-final games
 
 \subsection{Metrics used}
-% TODO: fill it
+Continuously assessing the performances of the robots is a crucial point to
+ensure that evolution of the rules is consistent with the improvements of the league.
+Another benefit of gathering metrics on the performance of the robots is the possibility to
+measure the impact of rule changes and the progress made.
+
+In order to capture the performances of the robot during the games, we propose
+to record logs of the game including: videos, messages from the referee box and
+messages from the robots.
+Teams will be strongly encouraged to share information on the perception and
+intention of their robots which is a required element to assess their performance.
+Ground truth will be obtained by human annotation of multiple calibrated video streams.
+
+%TODO: mention that metrics will not all be available during 1st year
+
+\subsubsection{Motion metrics}
+
+\begin{description}
+\item[Peak speed:] Reaching high-speed bipedal locomotion is one of the key
+  research theme of the league.
+  This measure is based on the highest distance traveled by a robot over 5 seconds.
+  
+\item[Approach time:] Efficiently controlling a locomotion engine based on perception
+  is a difficult problem.
+  The time required to travel the last meter before kicking is a good indicator
+  of its controllability.
+\item[Kicking motions:]
+  \begin{description}
+  \item[Kick type:] Forward, side, heel, rolling ball, flying ball, bicycle, throw-in
+  \item[Kick power:]
+  \item[Kick accuracy:]
+  \item[Execution-time:] (inline-kick)
+  \item[Shots on goal:]
+  \end{description}
+\item[Diving saves:] Number of events
+\end{description}
+
+
+\subsubsection{Perception metrics}
+
+\begin{description}
+\item[Ball Localization:]
+\item[Self Localization:]
+\item[Opponent localization:]
+\end{description}
+
+\subsubsection{Gameplay metrics}
+
+\begin{description}
+\item[Don't Mess Up Period:]
+\item[Players on field:]
+\end{description}
 
 \subsection{Detailed rule changes}
 % TODO: base elements on metrics
