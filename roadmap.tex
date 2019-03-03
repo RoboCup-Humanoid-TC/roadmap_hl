@@ -453,31 +453,71 @@ Ground truth will be obtained by human annotation of multiple calibrated video s
   is a difficult problem.
   The time required to travel the last meter before kicking is a good indicator
   of its controllability.
-\item[Kicking motions:]
+
+\item[Kicks and throw-ins:] Kicking the ball in soccer is one of the most important
+  skills.
+  From a robotic point of view, kicking is a highly dynamic motion task where
+  a maximum of energy has to be transmitted to the ball while keeping balance
+  and preserving accuracy.
+  Keeping track of the different types of kicks and some of their properties helps
+  to better understand the evolution of the game
   \begin{description}
-  \item[Kick type:] Forward, side, heel, rolling ball, flying ball, bicycle, throw-in
-  \item[Kick power:]
-  \item[Kick accuracy:]
-  \item[Execution-time:] (inline-kick)
-  \item[Shots on goal:]
+  \item[Kick type:] There are many different types of kicking in soccer:
+    forward kicks, side kicks, heel kicks, throw-ins (with hands) and even bicycle.
+  \item[Ball status:] Robots can kick in ball which are static, rolling or
+    flying at the moment of the impact.
+    The number of kick from rolling balls or flying balls is a strong indicator
+    of the dynamics of the games.
+  \item[Kick power:] Powerful kicks give a strong incentive toward teamplay.
+    This measure is based on the distance traveled by the ball before stopping or bouncing.
+  \item[Kick accuracy:] In order to play as a team or to score goals, it is
+    important that robots are capable of kicking accurately.
+    Measuring the difference between intention of the robot and the result of his kick with
+    respect to direction and power helps to assess the quality of kicks.
+  \item[Execution-time:] Smooth transition between motions is an important research theme.
+    Time required to go from walking motion to the end of the kick motion measures both,
+    the transition and the dynamic aspect of the motion.
   \end{description}
-\item[Diving saves:] Number of events
 \end{description}
 
 
 \subsubsection{Perception metrics}
 
+The comparison between ground truth and belief of the robot will allow to measure
+the quality of the perception of the robots.
+
 \begin{description}
-\item[Ball Localization:]
-\item[Self Localization:]
-\item[Opponent localization:]
+\item[Ball Localization and prediction:] The measure of ball localization takes
+  into account the percentage of time where the ball is located and the
+  quality of the position estimation in an egocentric basis.
+  On long-term, estimation of the speed of the ball and prediction of the trajectory will
+  be considered.
+\item[Self Localization:] Accurate localization in natural environment is a
+  difficult problem which include detection of features, odometry and filtering.
+  It is an essential skill for teamplay and high-level behaviors.
+  The measure of self-localization includes position and orientation of the robot
+  on the field.
+\item[Opponent recognition:] Measure of the quality of opponent recognition will
+  be based on estimated position and orientation of the opponents in an egocentric
+  basis.
+  On long-term, recognition of other robots intentions will also be evaluated.
 \end{description}
 
 \subsubsection{Gameplay metrics}
 
+High-level metrics related to gameplay are used to measure global performances
+of the teams and the quality of the teamplay.
+
 \begin{description}
-\item[Don't Mess Up Period:]
-\item[Players on field:]
+\item[Shots on goal:] The number of shots on goal during each game.
+\item[Diving saves:] The number of successful and failed dives from goalies.
+\item[Robots on field:] The average number of robots on the field per team
+  during games can be compared with the maximum number of robots authorized
+  in order to estimate robustness.
+\item[Don't Mess Up Period:] The DMUP is another robustness measure which indicates the
+  level of autonomy of the robots.
+  The DMUP is the period during which a robot played fully autonomously.
+  Increasing the DMUP is a preliminary to remove the handlers.
 \end{description}
 
 \subsection{Detailed rule changes}
