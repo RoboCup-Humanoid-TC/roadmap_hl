@@ -424,10 +424,7 @@ rulebook.
   competition.
 \end{description}
 
-% TODO: Is change based on 'best team', 'n best teams' or something else?
-% - From workshop: at least 3 teams from the semi-final games
-
-\subsection{Metrics used}
+\subsection{\label{sec:metrics}Metrics used}
 Continuously assessing the performances of the robots is a crucial point to
 ensure that evolution of the rules is consistent with the improvements of the league.
 Another benefit of gathering metrics on the performance of the robots is the possibility to
@@ -521,7 +518,17 @@ of the teams and the quality of the teamplay.
 \end{description}
 
 \subsection{Detailed rule changes}
-% TODO: note: base elements on metrics, add 
+This section presents briefly recent and future evolutions of the rules of the
+competition.
+It can be used to have an overview of the path traveled recently and on the
+steps remaining to reach the 2050 goal.
+For past evolutions and short-term changes, the year of the introduction of the
+change is indicated.
+For long-term changes, the conditions required to implement the changes and the
+delay between announcement of the change and its application are indicated.
+Conditions for changes are based on the metrics presented in section~\ref{sec:metrics}.
+In order to ensure competition is viable for multiple teams,
+at least 3 teams need to fulfill the conditions to trigger the changes.
 
 \subsubsection{Field size evolution and number of robots}
 
@@ -534,14 +541,20 @@ The roadmap for evolution of the field dimensions and the number of robots per t
 is presented in Fig.~\ref{fig:field_dimensions}.
 Changes will be triggered by the following conditions: robots should be able to cross
 the current field in 20 seconds and they should be able to kick the ball across half the field.
+Due to the major impact of field changes to the organization of the event,
+changes with respect to the size of the field need to be announced 2 years prior to application.
 
+% TODO: move to annex?
 \begin{figure}
   \centering
   \input{field_dimensions_diagram.tex}
   \caption{\label{fig:field_dimensions}Evolution of field dimensions in meters and number of robots}
 \end{figure}
 
-%TODO: add recap diagram with transition elements
+\subsubsection{Game duration}
+% Robustness + Autonomy
+
+% TODO: add avg(DMUP) > 0.5 -> time duration increase
 
 \subsubsection{Handlers}
 
@@ -550,6 +563,9 @@ the current field in 20 seconds and they should be able to kick the ball across 
 % RMSE on loc < 0.02 * fieldLength
 % RMSE on oppLoc < 0.02 * fieldLength
 % #Robot >= 6
+
+%TODO: subsubsection for global gameplay (penalty shootouts etc...)
+%TODO: subsubsection for technical challenges?
 
 \subsection{League status}
 % TODO: Separate diagram in 2/3 different diagrams? Skills and rules?
