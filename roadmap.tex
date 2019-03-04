@@ -419,8 +419,8 @@ rulebook.
 \item[2Y:] Changes which might require significant hardware investment for the
   teams or important modifications for the local organizers. These changes have
   to be announced at least 20 months prior implementation.
-\item[5Y:] Major changes which require drastic modifications on robot design.
-  These changes shave to be announced at least 56 months prior to the
+\item[4Y:] Major changes which require drastic modifications on robot design.
+  These changes shave to be announced at least 44 months prior to the
   competition.
 \end{description}
 
@@ -514,25 +514,42 @@ of the teams and the quality of the teamplay.
 \item[Robots on field:] The average number of robots on the field per team
   during games can be compared with the maximum number of robots authorized
   in order to estimate robustness.
-\item[Don't Mess Up Period:] The DMUP is another robustness measure which indicates the
+\item[Don't Mess Up Period (DMUP):] The DMUP is another robustness measure which indicates the
   level of autonomy of the robots.
   The DMUP is the period during which a robot played fully autonomously.
   Increasing the DMUP is a preliminary to remove the handlers.
 \end{description}
 
 \subsection{Detailed rule changes}
-% TODO: base elements on metrics
+% TODO: note: base elements on metrics, add 
 
-\subsubsection{Field evolution}
-The dimensions of the goal is a crucial aspect to ensure that scoring and
-defending goals are both possible. It makes sense that the ratio between the
-field width and the goal width is similar to the ratio in human soccer, but
-depending on kick accuracy and capacity of diving for goalies, it might be
-required to have smaller or larger goals.
+\subsubsection{Field size evolution and number of robots}
+
+Bipedal locomotion is one of the main challenge of the league, in order to keep
+the gameplay interesting, it is mandatory to have fields of size adapted to the
+speed of the robots.
+Increasing the size of the field allows to have more robots per team.
+
+The roadmap for evolution of the field dimensions and the number of robots per team
+is presented in Fig.~\ref{fig:field_dimensions}.
+Changes will be triggered by the following conditions: robots should be able to cross
+the current field in 20 seconds and they should be able to kick the ball across half the field.
+
+\begin{figure}
+  \centering
+  \input{field_dimensions_diagram.tex}
+  \caption{\label{fig:field_dimensions}Evolution of field dimensions in meters and number of robots}
+\end{figure}
 
 %TODO: add recap diagram with transition elements
 
 \subsubsection{Handlers}
+
+\subsubsection{Offside}
+
+% RMSE on loc < 0.02 * fieldLength
+% RMSE on oppLoc < 0.02 * fieldLength
+% #Robot >= 6
 
 \subsection{League status}
 % TODO: Separate diagram in 2/3 different diagrams? Skills and rules?

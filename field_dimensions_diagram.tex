@@ -1,0 +1,70 @@
+\tikzstyle{element}=[rectangle, draw=black, rounded corners, text centered,
+  anchor=north, text width=2cm, minimum height= 1cm]
+\tikzstyle{fake}=[rectangle, text centered, anchor=north, text width=2cm, minimum height= 1cm]
+\tikzstyle{league}=[rectangle, rounded corners,
+  anchor=north, minimum height= 1cm, font=\bfseries]
+\tikzstyle{transitionNote}=[rectangle, right, rounded corners, %text left,
+  text width=4cm, minimum height= 1cm]
+\tikzstyle{horizontalTransitionNote}=[rectangle, above, rounded corners, midway, %text center,
+  text width=0.5cm, minimum height= 1cm]
+\tikzstyle{dependency} = [->, thick]
+
+\begin{tikzpicture}[node distance=1cm, every node/.style={scale=0.6}]
+  \node (Teen-2vs2-6by4) [element] {2 vs 2\\$6 \times 4$}; 
+  \node (Teen-2vs2-9by6) [element,below=of Teen-2vs2-6by4] {2 vs 2\\$9 \times 6$}; 
+  \node (Teen-3vs3-9by6) [element,below=of Teen-2vs2-9by6] {3 vs 3\\$9 \times 6$};
+  \draw [dependency] (Teen-2vs2-6by4)  edge node [transitionNote] {2011} (Teen-2vs2-9by6);
+  \draw [dependency] (Teen-2vs2-9by6)  edge node [transitionNote] {2017} (Teen-3vs3-9by6);
+  
+  \node (Kid-start) [fake,left=4cm of Teen-2vs2-6by4] {}; 
+  \node (Kid-3vs3-6by4) [element,below=of Kid-start] {3 vs 3\\$6 \times 4$}; 
+  \node (Kid-4vs4-9by6) [element,below=of Kid-3vs3-6by4] {4 vs 4\\$9 \times 6$}; 
+  \node (Kid-6vs6-14by9) [element,below=of Kid-4vs4-9by6] {6 vs 6\\$14 \times 9$}; 
+  \node (Kid-8vs8-21by14) [element,below=of Kid-6vs6-14by9] {8 vs 8\\$21 \times 14$}; 
+  \node (Kid-11vs11-32by21) [element,below=of Kid-8vs8-21by14] {11 vs 11\\$32 \times 21$};
+  \draw [dependency] (Kid-3vs3-6by4)  edge node [transitionNote] {2014} (Kid-4vs4-9by6);
+  \draw [dependency] (Kid-4vs4-9by6) edge node [transitionNote] {2Y:\\peakSpeed $>$ 0.45 $m/s$\\kickDist $>$ 4.5 $m$} (Kid-6vs6-14by9);
+  \draw [dependency] (Kid-6vs6-14by9) edge node [transitionNote] {2Y:\\peakSpeed $>$ 0.7 $m/s$\\kickDist $>$ 7 $m$}  (Kid-8vs8-21by14);
+  \draw [dependency] (Kid-8vs8-21by14) edge node [transitionNote] {2Y:\\peakSpeed $>$ 1.05 $m/s$\\kickDist $>$ 10.5 $m$} (Kid-11vs11-32by21);
+
+  \node (Adult-start) [fake,right=4cm of Teen-2vs2-6by4] {}; 
+  \node (Adult-1vs1-9by6) [element,below=of Adult-start] {1 vs 1\\$9 \times 6$}; 
+  \node (Adult-2vs2-14by9) [element,below=of Adult-1vs1-9by6] {2 vs 2\\$14 \times 9$}; 
+  \node (Adult-3vs3-21by14) [element,below=of Adult-2vs2-14by9] {3 vs 3\\$21 \times 14$}; 
+  \node (Adult-4vs4-32by21) [element,below=of Adult-3vs3-21by14] {4 vs 4\\$32 \times 21$};
+  \node (Adult-6vs6-43by32) [element,below=of Adult-4vs4-32by21] {6 vs 6\\$43 \times 32$};
+  \node (Adult-8vs8-65by43) [element,below=of Adult-6vs6-43by32] {8 vs 8\\$65 \times 43$};
+  \node (Adult-11vs11-105by70) [element,below=of Adult-8vs8-65by43] {11 vs 11\\$105 \times 70$};
+  \draw [dependency] (Adult-start) edge node[transitionNote] {2010} (Adult-1vs1-9by6);
+  \draw [dependency] (Adult-1vs1-9by6) edge node[transitionNote] {2019} (Adult-2vs2-14by9);
+  \draw [dependency] (Adult-2vs2-14by9)
+        edge node [transitionNote] {2Y:\\peakSpeed $>$ 0.7 $m/s$\\kickDist $>$ 7 $m$}
+        (Adult-3vs3-21by14);
+  \draw [dependency] (Adult-3vs3-21by14)
+        edge node [transitionNote] {2Y:\\peakSpeed $>$ 1.05 $m/s$\\kickDist $>$ 10.5 $m$}
+        (Adult-4vs4-32by21);
+  \draw [dependency] (Adult-4vs4-32by21)
+        edge node [transitionNote] {2Y:\\peakSpeed $>$ 1.6 $m/s$\\kickDist $>$ 16 $m$}
+        (Adult-6vs6-43by32);
+  \draw [dependency] (Adult-6vs6-43by32)
+        edge node [transitionNote] {2Y:\\peakSpeed $>$ 2.15 $m/s$\\kickDist $>$ 21.5 $m$}
+        (Adult-8vs8-65by43);
+  \draw [dependency] (Adult-8vs8-65by43)
+        edge node [transitionNote] {2Y:\\peakSpeed $>$ 3.25 $m/s$\\kickDist $>$ 32.5 $m$}
+        (Adult-11vs11-105by70);
+
+  % Cross league dependency
+  \draw [dependency] (Teen-3vs3-9by6)  edge node [horizontalTransitionNote] {2020} (Kid-4vs4-9by6);
+  \draw [dependency] (Teen-3vs3-9by6)  edge node [horizontalTransitionNote] {2020} (Adult-2vs2-14by9);
+
+  % Leagues
+  \node (Kid) [league,text=orange] at ($(Kid-start) + (0,1.0)$) {Kid};
+  \draw [draw=orange] ($(Kid-11vs11-32by21) - (0.8,0.5)$) rectangle ($(Kid) + (2.4,0.2)$);
+  \node (Teen) [league,text=olive] at ($(Teen-2vs2-6by4) + (0,1.0)$) {Teen};
+  \draw [draw=olive] ($(Teen-3vs3-9by6) - (0.8,0.5)$) rectangle ($(Teen) + (0.8,0.2)$);
+  \node (Adult) [league,text=violet] at ($(Adult-start) + (0,1.0)$) {Adult};
+  \draw [draw=violet] ($(Adult-11vs11-105by70) - (0.8,0.5)$) rectangle ($(Adult) + (2.4,0.2)$);
+  
+\end{tikzpicture}
+
+%TODO: add removal of magnetometer ?
