@@ -385,6 +385,10 @@ On the same trend, a standing-up challenge will be introduced for adult size rob
 This technical challenge will then evolve toward falling robots with the aim of removing
 robot handlers on the long-term.
 
+
+%TODO: add missing elements
+% - Autonomous placing for all
+
 \section{\label{sec:LongTerm}Long-term: event triggered roadmap}
 
 % TODO: Reminder of the reason pushing toward event-triggered roadmap
@@ -551,12 +555,47 @@ changes with respect to the size of the field need to be announced 2 years prior
   \caption{\label{fig:field_dimensions}Evolution of field dimensions in meters and number of robots}
 \end{figure}
 
-\subsubsection{Game duration}
-% Robustness + Autonomy
+\subsubsection{Handlers and game duration}
+% Robustness + Energy efficiency
+Activity of the handlers and duration of half-times are related to three important research themes:
+autonomy of the robots, robustness and energy efficient locomotion.
+This section presents the roadmap along with some motivations,
+Fig.~\ref{fig:handlers+game_duration} summarizes those evolutions.
 
-% TODO: add avg(DMUP) > 0.5 -> time duration increase
+% StandUp autonomous for adult
+In KidSize and TeenSize, robots are requested to be able to fall and stand-up autonomously,
+a prerequisite to remove constant presence of handlers on the field which is a
+key point regarding autonomy for humanoid robots.
+For AdultSize robots, falling and standing-up is an important research question,
+while it is necessary to push toward this direction, it is not mature yet.
+Incentive towards improvements on this topic will be given through technical challenges.
+Once the problem has been tackled, requirements will be added to the rules and
+handlers will not be allowed nearby robots.
 
-\subsubsection{Handlers}
+% Robustness / long-term autonomy
+For robots able to fall and stand-up autonomously,
+the main challenge for autonomy is to reduce the frequency of human interventions in the league.
+This implies constraints on the robustness of both, software and hardware.
+Currently, several teams are relying on the possibility to pick-up robots every few minutes
+to reset their status.
+In order to create a higher incentive for robustness, it is necessary to have harsher penalties
+for Pick-Up.
+However, stricter rules would risk to result with less robots on the field which would not be
+suitable for the public.
+Therefore, before changing the rules, a minimum value of DMUP should be ensured.
+
+% Game period
+Once interventions of handlers are reduced to a minimum and robots are capable to play autonomously,
+increasing the duration of half-time will bring high incentive toward energy efficient locomotion.
+In order to ensure that increases of the duration are coherent with capacities of the robots,
+it will be required that teams can play at least the half a period without intervention
+from the handler in average before increasing time duration.
+
+\begin{figure}
+  \centering
+  \input{handlers_and_game_duration.tex}
+  \caption{\label{fig:handlers+game_duration}Evolutions regarding handlers and game duration}
+\end{figure}
 
 \subsubsection{Offside}
 

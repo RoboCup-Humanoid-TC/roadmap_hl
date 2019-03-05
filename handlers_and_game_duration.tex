@@ -1,0 +1,43 @@
+\tikzstyle{element}=[rectangle, draw=black, rounded corners, text centered,
+  anchor=north, text width=4cm, minimum height= 1cm]
+\tikzstyle{fake}=[rectangle, text centered, anchor=north, text width=2cm, minimum height= 1cm]
+\tikzstyle{league}=[rectangle, rounded corners,
+  anchor=north, minimum height= 1cm, font=\bfseries]
+\tikzstyle{transitionNote}=[rectangle, right, rounded corners, %text left,
+  text width=6cm, minimum height= 1cm]
+\tikzstyle{horizontalTransitionNote}=[rectangle, above, rounded corners, midway, %text center,
+  text width=0.5cm, minimum height= 1cm]
+\tikzstyle{dependency} = [->, thick]
+
+\begin{tikzpicture}[node distance=1cm, every node/.style={scale=0.6}]
+  \node (HandlersOnPitch) [element] {Handlers on pitch}; 
+  \node (TC-StandingUp) [element, below=of HandlersOnPitch] {Technical Challenge:\\Standing-Up}; 
+  \node (TC-Falling) [element, below=of TC-StandingUp] {Technical Challenge:\\Falling};
+  \node (HandlersOut) [element, below=of TC-Falling] {Handlers out of field};
+  \node (KidTeenStart) [fake, below=of HandlersOut] {};
+  \draw [dependency] (HandlersOnPitch)  edge node [transitionNote] {2020: Adult Size} (TC-StandingUp);
+  \draw [dependency] (TC-StandingUp)  edge node [transitionNote] {StandUp $< 10s$} (TC-Falling);
+  \draw [dependency] (TC-Falling)  edge node [transitionNote] {Fall on hard ground} (HandlersOut);
+  \draw [dependency] (KidTeenStart)  edge node [transitionNote] {KidSize + TeenSize} (HandlersOut);
+  
+  \node (ManualPlacement) [element, right=1cm of HandlersOnPitch] {Autonomous placement:\\Optional};
+  \node (HalfWayPlacement) [element, below=of ManualPlacement]
+        {Autonomous placement:\\All but Goal+Striker};
+  \node (AutonomousPlacement) [element, below=of HalfWayPlacement] {Autonomous placement:\\Required};
+  \node (PickUpPenalty) [element, below=of AutonomousPlacement] {Pick-Up:\\Major penalty};
+  \node (15minutes) [element, below=of PickUpPenalty] {Half-Time increase:\\15 minutes};
+  \node (20minutes) [element, below=of 15minutes] {Half-Time increase:\\20 minutes};
+  \node (30minutes) [element, below=of 20minutes] {Half-Time increase:\\30 minutes};
+  \node (45minutes) [element, below=of 30minutes] {Half-Time increase:\\45 minutes};
+  \draw [dependency] (ManualPlacement)  edge node [transitionNote] {2017} (HalfWayPlacement);
+  \draw [dependency] (HalfWayPlacement)  edge node [transitionNote] {2020} (AutonomousPlacement);
+  \draw [dependency] (AutonomousPlacement)  edge node [transitionNote] {2Y: avg(DMUP) > 3 minutes} (PickUpPenalty);
+  \draw [dependency] (PickUpPenalty)  edge node [transitionNote] {2Y: avg(DMUP) > 5 minutes} (15minutes);
+  \draw [dependency] (15minutes)  edge node [transitionNote] {2Y: avg(DMUP) > 7.5 minutes} (20minutes);
+  \draw [dependency] (20minutes)  edge node [transitionNote] {2Y: avg(DMUP) > 10 minutes} (30minutes);
+  \draw [dependency] (30minutes)  edge node [transitionNote] {2Y: avg(DMUP) > 15 minutes} (45minutes);
+
+  \draw [dependency] (HandlersOut) -- (PickUpPenalty);
+\end{tikzpicture}
+
+%TODO: add removal of magnetometer ?
