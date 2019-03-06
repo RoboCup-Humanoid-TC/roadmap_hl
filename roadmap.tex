@@ -609,14 +609,20 @@ rules similar to the FIFA rules\footnote{It is inevitable to bring modifications
 However, robots have to reach very high-level of autonomy in order to play according to soccer rules.
 As example, respecting the offside rules is particularly challenging with respect to perception.
 
-% Global evolution + remaining rules
+% Recent evolution
 At the origin of the league,
 the competition was centered around technical challenges and penalty shootouts.
 Since 2006, the competition has moved toward real soccer games with rules tending
 to get closer to the FIFA rules.
 The latest implemented change is the introduction of goal kick, corner kicks and
-throw-in for RoboCup2019.
-The most challenging rule which still need to be applied is the offside rule.
+throw-in or kick-in for RoboCup2019.
+
+% Upcoming changes
+There are 2 major gameplay changes remaining to have the gameplay rules similar to FIFA.
+The first is enforcing that throw-in are performed using hands,
+this rule will be introduced once the throw-in capacities are performed quickly and
+strongly enough.
+The second and most challenging remaining rule is the offside rule.
 It will require to ensure that three keypoints are achieved:
 Self-localization, localization of opponents and a minimum number of robots on the field.
 Evolution and perspectives for the gameplay rules are shown in Fig.~\ref{fig:gameplay_rules}.
@@ -626,11 +632,6 @@ Evolution and perspectives for the gameplay rules are shown in Fig.~\ref{fig:gam
   \input{gameplay_rules.tex}
   \caption{\label{fig:gameplay_rules}Evolutions of gameplay rules}
 \end{figure}
-
-% Real game transition:
-% - Kid: 2006
-% - Teen: ...
-% - Adult: ...
 
 % RMSE on loc < 0.02 * fieldLength
 % RMSE on oppLoc < 0.02 * fieldLength

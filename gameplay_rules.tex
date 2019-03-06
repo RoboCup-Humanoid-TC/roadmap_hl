@@ -25,6 +25,14 @@
   \draw [dependency] (Penalty)  edge node [transitionNote] {2006: Teen Size} (Dribble);
   \draw [dependency] (Dribble)  edge node [transitionNote]
         {2006: Kid Size\\2010: Teen Size\\2017: Adult Size} (RegularGames);
+  \draw [dependency] (RegularGames)  edge node [transitionNote] {2017} (FreeKicks);
+  \draw [dependency] (FreeKicks)  edge node [transitionNote] {2019} (CornerKicks);
+  \draw [dependency] (CornerKicks)  edge node [transitionNote] {2Y:\\throw-in time < 10s\\throw-in dist > $\frac{\mathrm{fieldLength}}{4}$ } (ThrowIn);
+  \draw [dependency] (ThrowIn)  edge node [transitionNote]
+        {2Y:\\
+         RMSE(loc) > $\frac{\mathrm{fieldLength}}{50}$\\
+         RMSE(oppLoc) > $\frac{\mathrm{fieldLength}}{50}$\\
+         robotsPerTeam $\geq 6$} (Offside);
 
 
   \draw [dependency] (AdultStart)  edge node [horizontalTransitionNote] {2010: Adult Size} (Dribble);
