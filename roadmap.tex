@@ -555,6 +555,8 @@ changes with respect to the size of the field need to be announced 2 years prior
   \caption{\label{fig:field_dimensions}Evolution of field dimensions in meters and number of robots}
 \end{figure}
 
+% TODO add field environment + Field outdoor??
+
 \subsubsection{Handlers and game duration}
 % Robustness + Energy efficiency
 Activity of the handlers and duration of half-times are related to three important research themes:
@@ -597,7 +599,38 @@ from the handler in average before increasing time duration.
   \caption{\label{fig:handlers+game_duration}Evolutions regarding handlers and game duration}
 \end{figure}
 
-\subsubsection{Offside}
+\subsubsection{Gameplay rules}
+% Context
+In order to reach the 2050 goal, robots have to be able to play according to
+rules similar to the FIFA rules\footnote{It is inevitable to bring modifications
+  to the rules, at least to impose some constraints on the size of the robots,
+  see~\cite{Stone2010} for more details on relationship between rules of soccer
+  and robotic soccer.}.
+However, robots have to reach very high-level of autonomy in order to play according to soccer rules.
+As example, respecting the offside rules is particularly challenging with respect to perception.
+
+% Global evolution + remaining rules
+At the origin of the league,
+the competition was centered around technical challenges and penalty shootouts.
+Since 2006, the competition has moved toward real soccer games with rules tending
+to get closer to the FIFA rules.
+The latest implemented change is the introduction of goal kick, corner kicks and
+throw-in for RoboCup2019.
+The most challenging rule which still need to be applied is the offside rule.
+It will require to ensure that three keypoints are achieved:
+Self-localization, localization of opponents and a minimum number of robots on the field.
+Evolution and perspectives for the gameplay rules are shown in Fig.~\ref{fig:gameplay_rules}.
+
+\begin{figure}
+  \centering
+  \input{gameplay_rules.tex}
+  \caption{\label{fig:gameplay_rules}Evolutions of gameplay rules}
+\end{figure}
+
+% Real game transition:
+% - Kid: 2006
+% - Teen: ...
+% - Adult: ...
 
 % RMSE on loc < 0.02 * fieldLength
 % RMSE on oppLoc < 0.02 * fieldLength

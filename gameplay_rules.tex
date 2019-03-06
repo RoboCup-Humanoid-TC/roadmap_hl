@@ -1,0 +1,32 @@
+\tikzstyle{element}=[rectangle, draw=black, rounded corners, text centered,
+  anchor=north, text width=4cm, minimum height= 1cm]
+\tikzstyle{fake}=[rectangle, text centered, anchor=north, text width=2cm, minimum height= 1cm]
+\tikzstyle{league}=[rectangle, rounded corners,
+  anchor=north, minimum height= 1cm, font=\bfseries]
+\tikzstyle{transitionNote}=[rectangle, right, rounded corners, %text left,
+  text width=6cm, minimum height= 1cm]
+\tikzstyle{horizontalTransitionNote}=[rectangle, above, rounded corners, midway, %text center,
+  text width=0.5cm, minimum height= 1cm]
+\tikzstyle{dependency} = [->, thick]
+
+\begin{tikzpicture}[node distance=1cm, every node/.style={scale=0.6}]
+  \node (Penalty) [element] {Penalty Shootouts};
+  \node (Dribble) [element, below=of Penalty] {Dribble and Kick};
+  \node (AdultStart) [fake, right=2cm of Dribble] {};
+  \node (RegularGames) [element, below=of Dribble] {Regular games\\Simplified};
+  \node (FreeKicks) [element, below=of RegularGames] {Regular games\\Free Kicks}; 
+  \node (CornerKicks) [element, below=of FreeKicks]
+        {Regular games\\Goal and Corner Kicks\\Throw-in or Kick-in}; 
+  \node (ThrowIn) [element, below=of CornerKicks]
+        {Regular games\\Throw-in mandatory};
+  \node (Offside) [element, below=of ThrowIn]
+        {Regular games\\Offside rule};
+
+  \draw [dependency] (Penalty)  edge node [transitionNote] {2006: Teen Size} (Dribble);
+  \draw [dependency] (Dribble)  edge node [transitionNote]
+        {2006: Kid Size\\2010: Teen Size\\2017: Adult Size} (RegularGames);
+
+
+  \draw [dependency] (AdultStart)  edge node [horizontalTransitionNote] {2010: Adult Size} (Dribble);
+\end{tikzpicture}
+
