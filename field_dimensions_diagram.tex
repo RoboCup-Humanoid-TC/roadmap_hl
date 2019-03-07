@@ -1,7 +1,7 @@
 \tikzstyle{element}=[rectangle, draw=black, rounded corners, text centered,
   anchor=north, text width=2cm, minimum height= 1cm]
 \tikzstyle{fake}=[rectangle, text centered, anchor=north, text width=2cm, minimum height= 1cm]
-\tikzstyle{league}=[rectangle, rounded corners,
+\tikzstyle{league}=[rectangle, rounded corners, text width=4cm,
   anchor=north, minimum height= 1cm, font=\bfseries]
 \tikzstyle{transitionNote}=[rectangle, right, rounded corners, %text left,
   text width=4cm, minimum height= 1cm]
@@ -16,18 +16,19 @@
   \draw [dependency] (Teen-2vs2-6by4)  edge node [transitionNote] {2011} (Teen-2vs2-9by6);
   \draw [dependency] (Teen-2vs2-9by6)  edge node [transitionNote] {2017} (Teen-3vs3-9by6);
   
-  \node (Kid-start) [fake,left=4cm of Teen-2vs2-6by4] {}; 
-  \node (Kid-3vs3-6by4) [element,below=of Kid-start] {3 vs 3\\$6 \times 4$}; 
+  \node (Kid-2vs2-45by3) [element,left=2cm of Teen-2vs2-6by4] {2 vs 2\\$4.5 \times 3$};
+  \node (Kid-3vs3-6by4) [element,below=of Kid-2vs2-45by3] {3 vs 3\\$6 \times 4$}; 
   \node (Kid-4vs4-9by6) [element,below=of Kid-3vs3-6by4] {4 vs 4\\$9 \times 6$}; 
   \node (Kid-6vs6-14by9) [element,below=of Kid-4vs4-9by6] {6 vs 6\\$14 \times 9$}; 
   \node (Kid-8vs8-21by14) [element,below=of Kid-6vs6-14by9] {8 vs 8\\$21 \times 14$}; 
   \node (Kid-11vs11-32by21) [element,below=of Kid-8vs8-21by14] {11 vs 11\\$32 \times 21$};
+  \draw [dependency] (Kid-2vs2-45by3)  edge node [transitionNote] {2008} (Kid-3vs3-6by4);
   \draw [dependency] (Kid-3vs3-6by4)  edge node [transitionNote] {2014} (Kid-4vs4-9by6);
   \draw [dependency] (Kid-4vs4-9by6) edge node [transitionNote] {2Y:\\peakSpeed $>$ 0.45 $m/s$\\kickDist $>$ 4.5 $m$} (Kid-6vs6-14by9);
   \draw [dependency] (Kid-6vs6-14by9) edge node [transitionNote] {2Y:\\peakSpeed $>$ 0.7 $m/s$\\kickDist $>$ 7 $m$}  (Kid-8vs8-21by14);
   \draw [dependency] (Kid-8vs8-21by14) edge node [transitionNote] {2Y:\\peakSpeed $>$ 1.05 $m/s$\\kickDist $>$ 10.5 $m$} (Kid-11vs11-32by21);
 
-  \node (Adult-start) [fake,right=4cm of Teen-2vs2-6by4] {}; 
+  \node (Adult-start) [fake,right=1cm of Teen-2vs2-6by4] {}; 
   \node (Adult-1vs1-9by6) [element,below=of Adult-start] {1 vs 1\\$9 \times 6$}; 
   \node (Adult-2vs2-14by9) [element,below=of Adult-1vs1-9by6] {2 vs 2\\$14 \times 9$}; 
   \node (Adult-3vs3-21by14) [element,below=of Adult-2vs2-14by9] {3 vs 3\\$21 \times 14$}; 
@@ -53,17 +54,36 @@
         edge node [transitionNote] {2Y:\\peakSpeed $>$ 3.25 $m/s$\\kickDist $>$ 32.5 $m$}
         (Adult-11vs11-105by70);
 
+  % Environment information
+  \node (Enriched) [element,right=2cm of Adult-start] {Side Poles};
+  \node (ColorCoded) [element,below=of Enriched] {Colored objects};
+  \node (HumanLike) [element,below=of ColorCoded] {No colors};
+  \draw [dependency] (Enriched) edge node [transitionNote] {2010: Restart marks\\2012: Side poles\\2013: Yellow goals} (ColorCoded) ;
+  \draw [dependency] (ColorCoded) edge node [transitionNote] {2015:\\White goals\\White ball} (HumanLike);
+
+  % Ground type
+  \node (Carpet) [element,right=2cm of Enriched] {Carpet};
+  \node (Turf) [element,below=of Carpet] {Artificial turf};
+  \node (SoccerGrass) [element,below=of Turf] {Soccer field surface};
+  \draw [dependency] (Carpet) edge node [transitionNote] {2015: 30mm turf} (Turf);
+  \draw [dependency] (Turf) -- (SoccerGrass);
+
+
   % Cross league dependency
   \draw [dependency] (Teen-3vs3-9by6)  edge node [horizontalTransitionNote] {2020} (Kid-4vs4-9by6);
   \draw [dependency] (Teen-3vs3-9by6)  edge node [horizontalTransitionNote] {2020} (Adult-2vs2-14by9);
 
-  % Leagues
-  \node (Kid) [league,text=orange] at ($(Kid-start) + (0,1.0)$) {Kid};
-  \draw [draw=orange] ($(Kid-11vs11-32by21) - (0.8,0.5)$) rectangle ($(Kid) + (2.4,0.2)$);
-  \node (Teen) [league,text=olive] at ($(Teen-2vs2-6by4) + (0,1.0)$) {Teen};
-  \draw [draw=olive] ($(Teen-3vs3-9by6) - (0.8,0.5)$) rectangle ($(Teen) + (0.8,0.2)$);
-  \node (Adult) [league,text=violet] at ($(Adult-start) + (0,1.0)$) {Adult};
-  \draw [draw=violet] ($(Adult-11vs11-105by70) - (0.8,0.5)$) rectangle ($(Adult) + (2.4,0.2)$);
+  % Categories
+  \node (Kid) [league,text=black] at ($(Kid-2vs2-45by3) + (0.5,1.0)$) {Kid};
+  \draw [draw=black] ($(Kid-11vs11-32by21) - (0.8,0.5)$) rectangle ($(Kid) + (1.9,0.2)$);
+  \node (Teen) [league,text=black] at ($(Teen-2vs2-6by4) + (0.5,1.0)$) {Teen};
+  \draw [draw=black] ($(Teen-3vs3-9by6) - (0.8,0.5)$) rectangle ($(Teen) + (0.3,0.2)$);
+  \node (Adult) [league,text=black] at ($(Adult-start) + (0.5,1.0)$) {Adult};
+  \draw [draw=black] ($(Adult-11vs11-105by70) - (0.8,0.5)$) rectangle ($(Adult) + (1.9,0.2)$);
+  \node (FieldInformation) [league,text=black] at ($(Enriched) + (0.5,1.0)$) {Field Information};
+  \draw [draw=black] ($(HumanLike) - (0.8,0.5)$) rectangle ($(FieldInformation) + (1.9,0.2)$);
+  \node (FieldSurface) [league,text=black] at ($(Carpet) + (0.5,1.0)$) {Field Surface};
+  \draw [draw=black] ($(SoccerGrass) - (0.8,0.5)$) rectangle ($(FieldSurface) + (1.9,0.2)$);
   
 \end{tikzpicture}
 
