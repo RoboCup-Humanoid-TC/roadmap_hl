@@ -222,7 +222,7 @@ These offsets are crucial for a good performance of the pixel to egocentric coor
 During the last years, multiple teams have started to work on automatic kinematic calibration. 
 These approaches are generally based on the use of visual markers easily detectable such as Aruco Tags~\cite{Garrido-Jurado2014}.
 
-\subsubsection{Verbal Commiunication}
+\subsubsection{Verbal Communication}
 %TODO:talk about coach and referee understanding
 
 
@@ -442,7 +442,17 @@ Teams will be strongly encouraged to share information on the perception and
 intention of their robots which is a required element to assess their performance.
 Ground truth will be obtained by human annotation of multiple calibrated video streams.
 
-%TODO: mention that metrics will not all be available during 1st year
+Gathering the metrics presented in this section will strongly improve the
+possibilities to assess improvements in the league, allow teams to publish
+quantitative results to support their claims and provide large amount of data
+to run learning algorithms.
+However, those benefits will come at a cost:
+significant software development will be required,
+human effort will be needed to validate the data and teams will have to agree on
+a common protocol.
+Therefore, extraction of the metrics will be introduced progressively during the
+next years.
+
 
 \subsubsection{Motion metrics}
 
@@ -522,6 +532,7 @@ of the teams and the quality of the teamplay.
   Increasing the DMUP is a preliminary to remove the handlers.
 \end{description}
 
+
 \subsection{Detailed rule changes}
 This section presents briefly recent and future evolutions of the rules of the
 competition.
@@ -538,20 +549,47 @@ at least 3 teams need to fulfill the conditions to trigger the changes.
 \subsubsection{Field evolution and number of robots}
 % TODO add field Information + Field surface text (update current text as well)
 
-Bipedal locomotion is one of the main challenge of the league, in order to keep
-the gameplay interesting, it is mandatory to have fields of size adapted to the
-speed of the robots.
-Increasing the size of the field allows to have more robots per team.
+% Importance of field and #robots for research and for accessibility for the teams
+Playing on real soccer fields with eleven humanoid robots per team is a
+long-term challenge which requires multiple breakthrough in research,
+particularly in locomotion.
+On the other hand, there are also technical and financial concerns:
+few teams are able to train on an entire field due to the space constraints and
+building eleven robots per team would be too expensive.
 
-The roadmap for evolution of the field dimensions and the number of robots per team
+% Last evolutions
+Since the beginning of the league, the number of robots per team has been increasing slowly
+and several changes have been made to the fields:
+\begin{itemize}
+\item The size has increased with the walking speed of the robots.
+\item While the initial fields contained extra information, those elements have
+  been progressively removed, causing a shift in methods used for ball
+  detection and localization.
+\item Introduction of artificial turf has proven to be a major challenge for
+  locomotion and has led to original hardware solutions to tackle the problem~\cite{Passault2015}.
+  It has also strongly reduced the distance traveled by the ball when kicking,
+  thus putting more constraints on shoots.
+\end{itemize}
+
+% Upcoming changes
+Since bipedal locomotion is one of the main reasearch theme of the league,
+increasing the size of the field in order to match the increasing speed of the
+robots will be required.
+In order to keep the gameplay interesting,
+it is mandatory to ensure that the size of the field stays coherent with the
+capacities of the robots.
+Further increases in the size of the field will allow to have more robots on the pitch,
+a crucial aspect to encourage collaboration between robots.
+
+The roadmap for evolution of the field and the number of robots per team
 is presented in Fig.~\ref{fig:field_dimensions}.
 Changes will be triggered by the following conditions: robots should be able to cross
 the current field in 20 seconds and they should be able to kick the ball across half the field.
 Due to the major impact of field changes to the organization of the event,
 changes with respect to the size of the field need to be announced 2 years prior to application.
 
-% TODO: move to annex?
-\begin{figure}
+% TODO: add outdoor?
+\begin{figure}[htb]
   \centering
   \input{field_dimensions_diagram.tex}
   \caption{\label{fig:field_dimensions}Evolution of field and number of robots, dimensions in meters.}
@@ -633,31 +671,25 @@ Evolution and perspectives for the gameplay rules are shown in Fig.~\ref{fig:gam
   \caption{\label{fig:gameplay_rules}Evolutions of gameplay rules}
 \end{figure}
 
-% RMSE on loc < 0.02 * fieldLength
-% RMSE on oppLoc < 0.02 * fieldLength
-% #Robot >= 6
+%TODO OPT: subsubsection for technical challenges?
 
-%TODO: subsubsection for global gameplay (penalty shootouts etc...)
-%TODO: subsubsection for technical challenges?
-
-\subsection{League status}
-% TODO: Separate diagram in 2/3 different diagrams? Skills and rules?
-% TODO: Add notes on the level
-\begin{sidewaysfigure}
-\input{diagram.tex}
-\end{sidewaysfigure}
+%\subsection{League status}
+%% TODO: Separate diagram in 2/3 different diagrams? Skills and rules?
+%% TODO: Add notes on the level
+%\begin{sidewaysfigure}
+%\input{diagram.tex}
+%\end{sidewaysfigure}
 
 
 \section{Evolution of the document}
 
+%TODO: add paragraph on why the document needs to be updated
+
 \begin{itemize}
 \item Status of the 'long-term' part updated yearly to assess progress
-\item Status of the 'short-term' part updated every year or every two years
+\item Status of the 'short-term' part updated every two years
 \item Scientific problematics: updated every 5 years
 \end{itemize}
-
-% TODO: Summarizing rule changes?
-%\section{Past evolutions}
 
 \newpage
 
