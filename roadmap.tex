@@ -98,8 +98,6 @@ Finally, a major concern from a mechanical point of view are achieving satisfyin
 
 \subsubsection{Bipedal locomotion}
 
-%TODO: Include refs to bibliography
-
 % Historically:
 % ZMP -> Developed in 1970, still quite used today ``
 % Walking, walking on uneven terrain, running
@@ -157,18 +155,17 @@ The second problem is that these kind of robots cannot safely operate in joint e
 Researchers are investigating protection of the robot mechanics, detection of entangling of robots, and soft materials to ensure that robots do not injure human players.
 The safe game play with humans does not only require improved mechanics, but also requires improvements in perception, reasoning, and actions.
 
-\subsubsection{Robustness and reduction of hardware cost}
+%\subsubsection{Robustness and reduction of hardware cost}
 % - Robots walking all game long (usually, only for demo)
 % - Low-cost architecture (risk of damaging the robots, adult-size excepted)
+% OPT: write paragraphs about this topic
 
-% TODO: write or comment
-
-\subsubsection{Motion learning}
+%\subsubsection{Motion learning}
 % Several specific motions required (standing-up)
-% TODO: write or comment
+% OPT: write paragraphs about this topic
 
-\subsubsection{Transition between motions}
-% TODO: write or comment
+%\subsubsection{Transition between motions}
+% OPT: write paragraphs about this topic
 
 \subsection{Perception}
 \subsubsection{Visual Perception}
@@ -181,14 +178,12 @@ Aggregation of information and filtering the perception are also crucial to anal
 To reduce the amount of work required to label the dataset for visual perception --- especially for data-hungry machine learning methods like deep learning --- tools have been developed to allow multiple teams to mutualize their efforts toward producing a dataset for the community \cite{imagetagger2018}.
 One of the scientific challenges which is specific to Humanoid robots, and other lightweight robots like drones, is the limited computational resources that are mainly due to weight limitations. 
 
-%TODO:talk about semantic perception
-%TODO:talk about object 6d pose estimation
+%OPT:talk about semantic perception
+%OPT:talk about object 6d pose estimation
 
-\subsubsection{Action Recognition and Prediction}
-%TODO:talk about goalie predicting kick direction based on the gesture of the kicker
+%\subsubsection{Action Recognition and Prediction}
+%OPT:talk about goalie predicting kick direction based on the gesture of the kicker
 %Understanding referee gesture
-
-% TODO: write or comment
 
 
 \subsubsection{Robot Detection and Identification}
@@ -227,15 +222,14 @@ These offsets are crucial for a good performance of the pixel to egocentric coor
 During the last years, multiple teams have started to work on automatic kinematic calibration. 
 These approaches are generally based on the use of visual markers easily detectable such as Aruco Tags~\cite{Garrido-Jurado2014}.
 
-\subsubsection{Verbal Communication}
-%TODO:talk about coach and referee understanding
-% TODO: write or comment
+%\subsubsection{Verbal Communication}
+%OPT:talk about coach and referee understanding
 
-\subsection{Decision-making}
-% TODO: write or comment
+%\subsection{Decision-making}
+%OPT: write paragraph about decision-making under uncertainty
 
-\subsection{Interaction with humans}
-% TODO: write or comment
+%\subsection{Interaction with humans}
+%OPT: write about safety and natural aspect of soccer playing
 
 \section{\label{sec:ShortTerm}Short-term: upcoming changes}
 
@@ -244,23 +238,46 @@ These approaches are generally based on the use of visual markers easily detecta
 The major rule changes for RoboCup 2019 are as following:
 
 \begin{itemize}
-\item Natural lightning
-\item Throw-in, corner kicks, goal kicks % TODO describe more
-\item Pick-up/penalties simplification
-\item Requiring implementation of an emergency stop button, no constraints on design
-\item Adult Size only
-  \begin{itemize}
-  \item The field size increases to $14 \times 9$ meters (previously $9 \times 6$ meters)
-  \item Games are now played 2 vs 2
-  \end{itemize}
+\item Natural lightning conditions are now explicitly allowed.
+  It provides more flexibility for the local organizers and
+  helps to prepare for moving outdoors while stimulating research on perception.
+  Since SPL has already had some success in these conditions,
+  it is reasonable to expect teams to be able to adapt.
+\item Throw-in, corner kicks and goal kicks will be introduced.
+  This will make games closer to FIFA games,
+  thus making it easier for public to understand referee's interventions on the field.
+  It is also expected that this will encourage teamplay since stoppage of games
+  allow robots to position themselves.
+\item The rules with respect to pick-up of robots and penalties for invalid
+  behavior have been reworked to reduce the number of interventions from the referees.
+  It also encourages team to have robust robots playing during the whole game by
+  increasing constraints on penalized robots.
+\item The presence of an emergency stop button will be required but without
+  constraints on appearance.
+  It is a mandatory step toward allowing robots to play with humans.
+\item For the adult size league, the size of the field increases to
+  $14 \times 9$ meters (previously $9 \times 6$ meters)
+  and the games are now played 2 vs 2 robots.
+  These changes will allow teamplay options for this league and is taking into
+  account the fact that the locomotion speed for this league has significantly
+  evolved for the past few years.
 \end{itemize}
 
 There are also some minor adjustements:
 
 \begin{itemize}
-\item Time for repositioning during stoppage of game increased to 45 seconds (previously 30 seconds).
-\item New phrasing regarding constraints on foot design.
-\item The surface of teams markers is increased and it is allowed to place them on chest.
+\item Time for repositioning during some stoppage of game has been increased.
+  In 2018, several teams had trouble to reach their own half within the time
+  constraints after scoring a goal.
+  This led to frequent interventions from handlers which can be reduced by
+  slightly increasing the time allowed for robots to position autonomously
+  during stoppage of games.
+\item A new phrasing regarding constraints on foot design has been introduced to
+  reduce the risk of misunderstandings.
+\item The surface of teams markers is increased and the restriction regarding
+  location of the markers on the robot have been reduced.
+  This change will make it easier to detect opponents,
+  thus improving the chances of presenting a satisfying gameplay to the public.
 \end{itemize}
 
 \subsection{RoboCup 2020 changes}
@@ -687,7 +704,7 @@ Evolution and perspectives for the gameplay rules are shown in Fig.~\ref{fig:gam
   \caption{\label{fig:gameplay_rules}Evolutions of gameplay rules}
 \end{figure}
 
-%TODO OPT: subsubsection for technical challenges?
+%OPT: subsubsection for technical challenges?
 
 \section{Evolution of the document}
 
