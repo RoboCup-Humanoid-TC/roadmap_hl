@@ -35,22 +35,22 @@
 % - Example of kid-size
 This document is a proposal to replace the roadmap proposed in 2014 for the
 RoboCup humanoid
-league~\footnote{\url{http://www.robocuphumanoid.org/wp-content/uploads/HumanoidLeagueProposedRoadmap.pdf}}. Criticism
+league~\footnote{\url{http://www.robocuphumanoid.org/wp-content/uploads/HumanoidLeagueProposedRoadmap.pdf}}. Criticisms
 have emerged with respect to establishing a long-term schedule for evolution of
 the rules in a research context where evolution is mainly guided by breakthrough
 rather than by linear development. Some of the changes planned revealed to be
 difficult to implement: the removal of the KidSize initially planned for 2020
 seems now unrealistic since this league still received more applications than
 TeenSize and AdultSize together in 2019. Finally, the relationship between
-missing skills and research topics was not explicited.
+missing skills and research topics was not explicit.
 
 % Aim of this document
-In order to avoid facing this issues, a different approach is used. Rather than
+In order to avoid facing these issues, a different approach is used. Rather than
 establishing a long-term schedule, the document describes the scientific challenges
 for the league and the steps required to play against humans.
 Upcoming changes in the next 5 years are described in more detail in order to allow
-teams, local organizer and the RoboCup Federation to have a better insight on
-evolution of the league.
+teams, local organizers and the RoboCup Federation to have a better insight on
+the evolution of the league.
 
 % Gathering opinions
 In order to produce a roadmap satisfying for both the trustees and the league,
@@ -62,12 +62,12 @@ this process has also shown that for some propositions it is difficult to reach 
 % Document contains history and will be updated frequently
 While the focus is on perspectives for the league,
 the document also contains information on the history of the league,
-thus allowing to improve understanding of the league evolution.
+thus allowing an improvement of the understanding of the league evolution.
 Updating this document regularly will allow to assess progress within the league
 and ensure that modification to the rules are consistent with the level of the
 teams.
 An evolution of the rules consistent with the level of the teams and
-scientific breakthrough is crucial to improve the attractivity of the league
+scientific breakthrough is crucial to improve the attractiveness of the league
 for both researchers and public.
 
 The structure of the documents is as
@@ -75,7 +75,7 @@ follows. Section~\ref{sec:ScientificChallenges} introduces the scientific
 challenges related to the league and their importance in the games. The major
 upcoming changes to the rules are presented in Section~\ref{sec:ShortTerm}. The
 global evolution of the leagues is discussed in Section~\ref{sec:LongTerm}
-through an event-triggered Roadmap and the history of changes which occured
+through an event-triggered Roadmap and the history of changes which occurred
 since the creation of the league.
 
 \section{\label{sec:ScientificChallenges}Scientific Challenges}
@@ -95,7 +95,7 @@ league in 2019, other motions are also important.
 At the moment these are mainly motions for standing up and kicking a ball on the ground.
 In the future, this will also include jumps, headers, volleys, and other highly dynamic motions.
 Given the adversarial nature of RoboCup, one of the key elements is also the transition between different motions in order to reduce the time required to achieve complex tasks. 
-Finally, a major concern from a mechanical point of view are achieving satisfying performances while using low-cost hardware and ensuring the robustness of the hardware despite the fact that the robots are falling.
+Finally, a major concern from a mechanical point of view is achieving satisfying performances while using low-cost hardware and ensuring the robustness of the hardware despite the fact that the robots are falling.
 
 \subsubsection{Bipedal locomotion}
 
@@ -109,14 +109,14 @@ Vukobratović proved that the ZMP criterium is a sufficient condition for dynami
 Sugihara developed stable online walking trajectories using an inverted pendulum model.
 Many teams in the humanoid league have developed stable walking gaits in the forward directions or omni-directional walking engines~\cite{Sugihara2002}.
 
-Just like in human soccer, collissions between players with players from the opposing or own team are common.
+Just like in human soccer, collisions between players with players from the opposing or own team are common.
 The increased speed of the robots as well as the increased number of players on the field also necessitates that the robots can compensate for collissions (push recovery).
 Pratt et al. introduced capture steps to control a robot during push recovery after a collision\cite{Pratt2006}.
 
 \subsubsection{Offline and Online Learning of Motions}
 % Several specific motions required (standing-up)
 
-Since the development of walking gaits and push recovery motions for humanoid robots is non-trivial and many approaches require complex models of the dynamics of the robot, there has been continuous interest in optimizing motions or even learn motions from scracth using machine learning.
+Since the development of walking gaits and push recovery motions for humanoid robots is non-trivial and many approaches require complex models of the dynamics of the robot, there has been continuous interest in optimizing motions or even learn motions from scratch using machine learning.
 Many approaches to learning of motions have been explored by RoboCup teams and other researchers.
 Genetic algorithms~\cite{Huan2018}, Support vector machines SVMs~\cite{Wang2013}, artificial neural networks ANNs~\cite{Kim2012}, cerebellar model articulation controllers CMACs~\cite{Sabourin2005}, and reinforcement learning (RL)~\cite{Morimoto2004} have explored for learning trajectories for walking, push recovery, and other motions. 
 These approaches have led to some impressive results, in spite of the fact that applying these techniques to robotics domains is difficult since the perceptions, states, and actions of the robots are continuous, instead of the more common discreet representations (e.g., attribute-value representations).
@@ -125,7 +125,7 @@ In recent years, many areas of Artificial Intelligence have been revolutionized 
 Deep learning approaches have also been used increasingly by other humanoid robotics researchers and RoboCup participants~\cite{Hwangbo2019}.
 
 Early approaches focused on offline learning approaches, where the motions of the robots are learned prior to a competition.
-The training data is usually labelled training data from actual experiments with the robot.
+The training data is usually labeled training data from actual experiments with the robot.
 Several algorithms also seed the learning of the robot using synthetic training data generated from simulation or a combination of real-world and simulation data.
 Deep learning approaches in general have a higher sample complexity and the generation of good training data is therefore challenging.
 
@@ -141,17 +141,17 @@ The MX, RX, X series products of Robotis Inc. are used by many teams in the huma
 In the adult sized league, robots usually use actuators build from a combination of servo motors with additional gears to increase the torque.
 Several teams now also use harmonic drives (e.g., Robotis Dynamixel Pro series).
 
-The mechanical structures are stiff and built from aluminium or carbon fibres.
+The mechanical structures are stiff and built from aluminium or carbon fibers.
 
-Affordable servo motors have poor power to weight ratios and highly dynamic motions are severly limited due to insufficient power output.
+Affordable servo motors have poor power to weight ratios and highly dynamic motions are severely limited due to insufficient power output.
 Currently, the robots in the humanoid robot league are unable to run.
 
-Furthermore, the first problem with these kind of robots is that it hard to see how these robots will ever be able to run dynamically.
+Furthermore, the first problem with these kinds of robots is that it is hard to see how these robots will ever be able to run dynamically.
 The high impact forces when landing would result in damage to the gear box.
 
 Researchers are actively investigating the use of compliant actuators or new actuation models (e.g., cycloid motors, linear actuators, artificial muscles)
 
-The second problem is that these kind of robots cannot safely operate in joint environments with humans, especially in soccer, where collissions between players occur frequently.
+The second problem is that these kinds of robots cannot safely operate in joint environments with humans, especially in soccer, where collisions between players frequently occur.
 
 Researchers are investigating protection of the robot mechanics, detection of entangling of robots, and soft materials to ensure that robots do not injure human players.
 The safe game play with humans does not only require improved mechanics, but also requires improvements in perception, reasoning, and actions.
@@ -197,11 +197,11 @@ There are already some papers for this research topic in a humanoid soccer envir
 \subsubsection{Localization}
 Currently, most of the localization modules are based on particle filters which allow to track multi-modal distributions. 
 While these approaches have proved their efficiency, recent advances in the SLAM domain suggest that localization based on factor graphs rather than filtering are more accurate~\cite{Strasdat2012}.
-To add another source of information for supporting robot localization especially for when the robot is kidnapped, visual odometry can be considered.
-By utilizing the input of the camera system, the 6-DOF motion of the camera can be estimated. SVO 2.0 \cite{forster2014svo} and DSO \cite{engel2018direct} are two example of these approaches for monocular vision.
+To add another source of information for supporting robot localization especially when the robot is kidnapped, visual odometry can be considered.
+By utilizing the input of the camera system, the 6-DOF motion of the camera can be estimated. SVO 2.0 \cite{forster2014svo} and DSO \cite{engel2018direct} are two examples of these approaches for monocular vision.
 A sample output of DSO on the soccer field in illustrated in Fig.~\ref{FigDSO}.
 Both systems offer built-in support for integration into ROS and allow real-time processing of image data. 
-While DSO uses a direct approach based on pixel densities, SVO 2.0 additionally considers features for analyzing visual input. 
+While DSO uses a direct approach based on pixel density, SVO 2.0 additionally considers features for analyzing visual input. 
 When testing these approaches with smooth camera movements over short periods of time, both can calculate stable and accurate motion traces. 
 However, extended periods of time or abrupt and fast movements often lead to wrong results or complete failure of these systems. 
 One interesting research direction would be integrating IMU information into the visual odometry system to achieve more stable results.
@@ -219,7 +219,7 @@ Most of the information used for localization relies on information provided by 
 Having the exact kinematic model of the robot is not always possible. 
 Therefore it is necessary to calibrate variations from the designed CAD model to prevent potentially large projection errors for distant objects. 
 A calibration of the kinematics on each robot that tunes translation and rotation offsets between the torso and the camera is required. 
-These offsets are crucial for a good performance of the pixel to egocentric coordinate projection algorithm.
+These offsets are crucial for a good performance of the pixel to egocentric coordinate projection algorithms.
 During the last years, multiple teams have started to work on automatic kinematic calibration. 
 These approaches are generally based on the use of visual markers easily detectable such as Aruco Tags~\cite{Garrido-Jurado2014}.
 
@@ -264,10 +264,10 @@ The major rule changes for RoboCup 2019 are as following:
   evolved for the past few years.
 \end{itemize}
 
-There are also some minor adjustements:
+There are also some minor adjustments:
 
 \begin{itemize}
-\item Time for repositioning during some stoppage of game has been increased.
+\item Time for repositioning during some stoppage of the game has been increased.
   In 2018, several teams had trouble to reach their own half within the time
   constraints after scoring a goal.
   This led to frequent interventions from handlers which can be reduced by
@@ -275,15 +275,15 @@ There are also some minor adjustements:
   during stoppage of games.
 \item A new phrasing regarding constraints on foot design has been introduced to
   reduce the risk of misunderstandings.
-\item The surface of teams markers is increased and the restriction regarding
-  location of the markers on the robot have been reduced.
+\item The surface of teams markers is increased and the restriction regarding the 
+  location of the markers on the robot has been reduced.
   This change will make it easier to detect opponents,
-  thus improving the chances of presenting a satisfying gameplay to the public.
+  thus improving the chances of presenting satisfying gameplay to the public.
 \end{itemize}
 
 \subsection{RoboCup 2020 changes}
 
-The process of updating the roadmap allowed to identify immediate changes which
+The process of updating the roadmap allowed the identification of immediate changes which
 could benefit the humanoid league.
 One of the most important element is the organization of the league. Since 2010,
 the league is composed of 3 leagues, KidSize, TeenSize and AdultSize.
@@ -329,8 +329,8 @@ Increasing the number of participants in each league would also make it easier
 to separate the main league in two divisions, allowing experienced teams to have
 more competitive games and new teams to have a more interesting event.
 It would also be interesting to increase the average number of robots on
-the pitch without loosing teams du to financial issues.
-Finally, while Drop-In games has triggered the interest of multiple teams,
+the pitch without losing teams due to financial issues.
+Finally, while Drop-In games have triggered the interest of multiple teams,
 some teams find that it overloads the schedule, especially during the knock-out
 phases.
 
@@ -339,9 +339,9 @@ structure:
 \begin{enumerate}
 \item The tournament will start by all the Drop-In games. This phase will
   require only one robot per team.
-\item Teams who have not the maximum number of robots allowed for their league
+\item Teams who do not have the maximum number of robots allowed for their league
   are required to form combined teams in order to form a full team of robots.
-\item If there are less than 16 teams in the league after the merge procedure,
+\item If there are fewer than 16 teams in the league after the merge procedure,
   all teams play in division A.
   If there are more than 16 merged teams, repartition of the teams is based
   on the result of the teams during Drop-In games and play-off games.
@@ -361,7 +361,7 @@ of robots, from the Drop-In to the regular tournaments.
 
 \subsubsection{Open Humanoid Leagues}
 
-Current implementation as led to some constraints on robot design~(passive
+The current implementation as led to some constraints on robot design~(passive
 sensors, size limitations) and complex rules in order to ensure fair games and
 to focus on human-like structure and perception.
 While this allows to bring the rules of the competition closer to the FIFA rules,
@@ -370,7 +370,7 @@ In order to attract new teams, the Open Humanoid League will be opened.
 This league will have a very limited number of rules and reduced hardware constraints.
 
 Since it is difficult to anticipate how many teams will apply for this league,
-implementation details will be chosen depending on the teams interested by this
+implementation details will be chosen depending on the teams interested in this
 competition.
 Trophies will be awarded to the teams according to the same rules as regular leagues.
 
@@ -387,7 +387,7 @@ invited and selected to present their work during the RoboCup.
 Demonstrations will not be limited to soccer playing humanoid robots, they will
 also include innovation on specific themes (e.g. soft robotics).
 The aim is to reserve space and time slots to present innovation in technology
-or research in order to stimulate apparition of new ideas in the league.
+or research in order to stimulate the apparition of new ideas in the league.
 Constraints on the exhibitions will be avoided in order to allow original
 elements, no awards will be provided in order to keep it as a competition-free
 event.
@@ -398,7 +398,7 @@ Presenting autonomous robots performing complex tasks is one of the strength of
 the RoboCup community.
 In this context, every opportunity to move robots on the field given to handlers
 reduces the constraints on autonomy and therefore the achievement.
-Moreover, interactions of the handlers with the robots reduces the interest from
+Moreover, interactions of the handlers with the robots reduce the interest from
 the public.
 
 Currently, handlers are allowed to place manually a striker and a goalie.
@@ -410,7 +410,7 @@ while reducing the frequency of human interventions.
 \subsubsection{Update of the technical challenges}
 
 From 2020, it will be mandatory for teams to have multiple robots in their team
-or to merge with other teams for the regular tournament.
+or to merge with other teams in the regular tournament.
 Therefore, we will start introducing technical challenges requiring collaboration between robots.
 
 One of the current challenges is based on performing a kick on the goal from a moving ball.
@@ -428,12 +428,12 @@ robot handlers on the long-term.
 
 \section{\label{sec:LongTerm}Long-term: event-triggered roadmap}
 
-While the previous roadmap was based on a schedule planning the year of
+While the previous roadmap was based on a schedule planning the year of the 
 appearance of some skills,
 this roadmap bases the evolution of the rules on the performance of the robots.
 The current version also presents evolution of the rules since the creation of
 the league in order to provide a better understanding of past evolution in order
-to anticipate impact of upcoming changes.
+to anticipate the impact of upcoming changes.
 Moreover, by analyzing in-game performances of the robots and storing them,
 it will be possible to assess properly the evolution of the league.
 
@@ -449,7 +449,7 @@ in section~\ref{sec:detailed-rule-changes}.
 % Events or measures are used to trigger the changes
 Changes in the rules will be triggered by either research breakthrough or
 continuous improvement of some skills. Those improvements will be ensured
-through either measures of metrics during the game such as walking speed or
+through either measure of metrics during the game such as walking speed or
 success at technical challenges. This will ensure that the rules improvements
 are coherent with the capabilities of the robots in the league.
 
@@ -460,12 +460,12 @@ competition. Similar issues arise for local organization with changes regarding
 the size of the fields. In order to provide more time to teams and local
 organizers while still allowing adaptation of the rules, we propose to separate
 the evolution of the league in three categories depending on the number of years
-required between announcement of the rule change and its application. Note that
-we consider a 4 month period to allow the TC to implement the changes inside the
+required between the announcement of the rule change and its application. Note that
+we consider a 4-month period to allow the TC to implement the changes inside the
 rulebook.
 \begin{description}
-\item[1Y:] Changes which can be done from one competition to the other without
-  requiring previous announcement. This is limited to rule changes which have
+\item[1Y:] Changes which can be made from one competition to the other without
+  requiring previous announcement. This is limited to rule changes which have a
   low impact on the robot design and do not require additional space for the
   competition. These changes have to be announced at least 8 months prior
   to the competition.
@@ -506,7 +506,7 @@ next years.
 
 \begin{description}
 \item[Peak speed:] Reaching high-speed bipedal locomotion is one of the key
-  research theme of the league.
+  research themes of the league.
   This measure is based on the highest distance traveled by a robot over 5 seconds.
   
 \item[Approach time:] Efficiently controlling a locomotion engine based on perception
@@ -523,8 +523,8 @@ next years.
   to better understand the evolution of the game
   \begin{description}
   \item[Kick type:] There are many different types of kicking in soccer:
-    forward kicks, side kicks, heel kicks, throw-ins (with hands) and even bicycle.
-  \item[Ball status:] Robots can kick in ball which are static, rolling or
+    forward kicks, side kicks, heel kicks, throw-ins (with hands) and even bicycles.
+  \item[Ball status:] Robots can kick in ball which is static, rolling or
     flying at the moment of the impact.
     The number of kick from rolling balls or flying balls is a strong indicator
     of the dynamics of the games.
@@ -532,7 +532,7 @@ next years.
     This measure is based on the distance traveled by the ball before stopping or bouncing.
   \item[Kick accuracy:] In order to play as a team or to score goals, it is
     important that robots are capable of kicking accurately.
-    Measuring the difference between intention of the robot and the result of his kick with
+    Measuring the difference between the intention of the robot and the result of his kick with
     respect to direction and power helps to assess the quality of kicks.
   \item[Execution-time:] Smooth transition between motions is an important research theme.
     Time required to go from walking motion to the end of the kick motion measures both,
@@ -543,7 +543,7 @@ next years.
 
 \subsubsection{Perception metrics}
 
-The comparison between ground truth and belief of the robot will allow to measure
+The comparison between ground truth and belief of the robot will allow the measurement of
 the quality of the perception of the robots.
 
 \begin{description}
@@ -553,7 +553,7 @@ the quality of the perception of the robots.
   On long-term, estimation of the speed of the ball and prediction of the trajectory will
   be considered.
 \item[Self Localization:] Accurate localization in natural environment is a
-  difficult problem which include detection of features, odometry and filtering.
+  difficult problem which includes detection of features, odometry and filtering.
   It is an essential skill for teamplay and high-level behaviors.
   The measure of self-localization includes position and orientation of the robot
   on the field.
@@ -582,14 +582,14 @@ of the teams and the quality of the teamplay.
 
 
 \subsection{\label{sec:detailed-rule-changes}Detailed rule changes}
-This section presents briefly recent and future evolutions of the rules of the
+This section presents briefly recent and future evolution of the rules of the
 competition.
 It can be used to have an overview of the path traveled recently and on the
 steps remaining to reach the 2050 goal.
-For past evolutions and short-term changes, the year of the introduction of the
+For past evolution and short-term changes, the year of the introduction of the
 change is indicated.
 For long-term changes, the conditions required to implement the changes and the
-delay between announcement of the change and its application are indicated.
+delay between the announcement of the change and its application are indicated.
 Conditions for changes are based on the metrics presented in section~\ref{sec:metrics}.
 In order to ensure competition is viable for multiple teams,
 at least 3 teams need to fulfill the conditions to trigger the changes.
@@ -600,10 +600,10 @@ Playing on real soccer fields with eleven humanoid robots per team is a
 long-term challenge which requires multiple breakthrough in research,
 particularly in locomotion.
 On the other hand, there are also technical and financial concerns:
-few teams are able to train on an entire field due to the space constraints and
+few teams are able to train on an entire field due to space constraints and
 building eleven robots per team would be too expensive.
 
-% Last evolutions
+% Last evolution
 Since the beginning of the league, the number of robots per team has been increasing slowly
 and several changes have been made to the fields:
 \begin{itemize}
@@ -618,13 +618,13 @@ and several changes have been made to the fields:
 \end{itemize}
 
 % Upcoming changes
-Since bipedal locomotion is one of the main reasearch theme of the league,
+Since bipedal locomotion is one of the main research themes of the league,
 increasing the size of the field in order to match the increasing speed of the
 robots will be required.
 In order to keep the gameplay interesting,
 it is mandatory to ensure that the size of the field stays coherent with the
 capacities of the robots.
-Further increases in the size of the field will allow to have more robots on the pitch,
+Further increases in the size of the field will allow more robots on the pitch,
 a crucial aspect to encourage collaboration between robots.
 
 The roadmap for evolution of the field and the number of robots per team
@@ -632,21 +632,21 @@ is presented in Fig.~\ref{fig:field_dimensions}.
 Changes will be triggered by the following conditions: robots should be able to cross
 the current field in 20 seconds and they should be able to kick the ball across half the field.
 Due to the major impact of field changes to the organization of the event,
-changes with respect to the size of the field need to be announced 2 years prior to application.
+changes with respect to the size of the field need to be announced 2 years prior to their application.
 
 % TODO: add outdoor?
 \begin{figure}[htb]
   \centering
   \input{field_dimensions_diagram.tex}
-  \caption{\label{fig:field_dimensions}Evolution of field and number of robots, dimensions in meters.}
+  \caption{\label{fig:field_dimensions}Evolution of the field and number of robots, dimensions in meters.}
 \end{figure}
 
 \subsubsection{Handlers and game duration}
 % Robustness + Energy efficiency
-Activity of the handlers and duration of half-times are related to three important research themes:
+Activity of the handlers and duration of half-time are related to three important research themes:
 autonomy of the robots, robustness and energy efficient locomotion.
 This section presents the roadmap along with some motivations,
-Fig.~\ref{fig:handlers+game_duration} summarizes those evolutions.
+Fig.~\ref{fig:handlers+game_duration} summarizes those evolution.
 
 % StandUp autonomous for adult
 In KidSize and TeenSize, robots are requested to be able to fall and stand-up autonomously,
@@ -662,11 +662,11 @@ handlers will not be allowed nearby robots.
 For robots able to fall and stand-up autonomously,
 the main challenge for autonomy is to reduce the frequency of human interventions in the league.
 This implies constraints on the robustness of both, software and hardware.
-Currently, several teams are relying on the possibility to pick-up robots every few minutes
+Currently, several teams are relying on the possibility to pick up robots every few minutes
 to reset their status.
 In order to create a higher incentive for robustness, it is necessary to have harsher penalties
 for Pick-Up.
-However, stricter rules would risk to result with less robots on the field which would not be
+However, stricter rules would risk resulting with fewer robots on the field which would not be
 suitable for the public.
 Therefore, before changing the rules, a minimum value of DMUP should be ensured.
 
@@ -674,7 +674,7 @@ Therefore, before changing the rules, a minimum value of DMUP should be ensured.
 Once interventions of handlers are reduced to a minimum and robots are capable to play autonomously,
 increasing the duration of half-time will bring high incentive toward energy efficient locomotion.
 In order to ensure that increases of the duration are coherent with capacities of the robots,
-it will be required that teams can play at least the half a period without intervention
+it will be required that teams can play at least half a period without intervention
 from the handler in average before increasing time duration.
 
 \begin{figure}
@@ -688,10 +688,10 @@ from the handler in average before increasing time duration.
 In order to reach the 2050 goal, robots have to be able to play according to
 rules similar to the FIFA rules\footnote{It is inevitable to bring modifications
   to the rules, at least to impose some constraints on the size of the robots,
-  see~\cite{Stone2010} for more details on relationship between rules of soccer
+  see~\cite{Stone2010} for more details the relationship between rules of soccer
   and robotic soccer.}.
 However, robots have to reach very high-level of autonomy in order to play according to soccer rules.
-As example, respecting the offside rules is particularly challenging with respect to perception.
+As an example, respecting the offside rules is particularly challenging with respect to perception.
 
 % Recent evolution
 At the origin of the league,
@@ -707,7 +707,7 @@ The first is enforcing that throw-in are performed using hands,
 this rule will be introduced once the throw-in capacities are performed quickly and
 strongly enough.
 The second and most challenging remaining rule is the offside rule.
-It will require to ensure that three keypoints are achieved:
+It will require to ensure that three key points are achieved:
 Self-localization, localization of opponents and a minimum number of robots on the field.
 Evolution and perspectives for the gameplay rules are shown in Fig.~\ref{fig:gameplay_rules}.
 
@@ -724,20 +724,20 @@ Evolution and perspectives for the gameplay rules are shown in Fig.~\ref{fig:gam
 Since breakthroughs in research and evolution of the games is very difficult to predict,
 the following document should be frequently updated in order to match.
 It should also be possible for the league and for the trustees to request for
-modifications because some elements seems unrealistic with respect to the current
+modifications because some elements seem unrealistic with respect to the current
 status of the league.
 
-In order to highlight that the document need to be update frequently, we present
+In order to highlight that the document needs to be updated frequently, we present
 here the minimal frequency for updating the different sections of this document:
 \begin{itemize}
-\item Section~\ref{sec:ScientificChallenges} emphasizes on research related to
+\item Section~\ref{sec:ScientificChallenges} emphasizes research related to
   the RoboCup Humanoid League and on contributions from the league.
   While major publications from the teams should be added to the document regularly,
   updating this section requires significant work from the TC and is based on
   global progress in research areas linked with the league.
   Next mandatory update is planned for 2024.
 \item Section~\ref{sec:ShortTerm} presents upcoming changes in the rules.
-  Since it has been made pretty clear by the team that updating the rulebook
+  Since it has been made pretty clear by the team that updating the rule book
   every year was too frequent,
   it is not mandatory to update it every year.
   Next mandatory update is planned for 2021.
