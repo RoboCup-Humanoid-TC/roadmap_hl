@@ -161,7 +161,7 @@ Deep learning approaches in general have a higher sample complexity and the gene
 
 More recently several researchers have also applied online machine learning approaches, that is the system learns to optimize its motions during game play.
 The aim of these approaches is to reduce errors in the kinematic and dynamic model of the robot.
-Another motivation for online learning is to compensate for faults in the robot. For example, a robot that damages one of its hip ervos may learn to adapt its motion during the match, so that it can still help its team albeit less effective than if it were in perfect working order.
+Another motivation for online learning is to compensate for faults in the robot. For example, a robot that damages one of its hip servos may learn to adapt its motion during the match, so that it can still help its team albeit less effective than if it were in perfect working order.
 
 
 \subsection{Compliant Actuators and Soft Robotics}
@@ -229,7 +229,7 @@ Currently, most of the localization modules are based on particle filters which 
 While these approaches have proved their efficiency, recent advances in the SLAM domain suggest that localization based on factor graphs rather than filtering are more accurate~\cite{Strasdat2012}.
 To add another source of information for supporting robot localization especially when the robot is kidnapped, visual odometry can be considered.
 By utilizing the input of the camera system, the 6-DOF motion of the camera can be estimated. SVO 2.0 \cite{forster2014svo} and DSO \cite{engel2018direct} are two examples of these approaches for monocular vision.
-A sample output of DSO on the soccer field in illustrated in Fig.~\ref{FigDSO}.
+A sample output of DSO on the soccer field is illustrated in Fig.~\ref{FigDSO}.
 Both systems offer built-in support for integration into ROS and allow real-time processing of image data. 
 While DSO uses a direct approach based on pixel density, SVO 2.0 additionally considers features for analyzing visual input. 
 When testing these approaches with smooth camera movements over short periods of time, both can calculate stable and accurate motion traces. 
@@ -503,7 +503,7 @@ rulebook.
   teams or important modifications for the local organizers. These changes have
   to be announced at least 20 months prior implementation.
 \item[4Y:] Major changes which require drastic modifications on robot design.
-  These changes shave to be announced at least 44 months prior to the
+  These changes have to be announced at least 44 months prior to the
   competition.
 \end{description}
 
@@ -643,8 +643,8 @@ and several changes have been made to the fields:
   detection and localization.
 \item Introduction of artificial turf has proven to be a major challenge for
   locomotion and has led to original hardware solutions to tackle the problem~\cite{Passault2015}.
-  It has also strongly reduced the distance traveled by the ball when kicking,
-  thus putting more constraints on shoots.
+  It has also strongly reduced the distance travelled by the ball when kicking,
+  thus putting more constraints on shots.
 \end{itemize}
 
 % Upcoming changes
