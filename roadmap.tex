@@ -116,7 +116,7 @@ since the creation of the league.
 
 % Very brief history reminder
 The first humanoid robot built was the WABOT-1 which was completed in 1972. 
-While WABOT-1 was already able to walk, controlling the walking gait of a humanoid robot a challenging problem today. 
+While WABOT-1 was already able to walk, controlling the walking gait of a humanoid robot is a challenging problem today.
 From designing dynamic walking gait to running and real-time adaptation of multi-objective motions, motion control of humanoid robots is an active research topic.
 
 % Focus of RoboCup : introduction
@@ -133,7 +133,7 @@ Finally, a major concern from a mechanical point of view is achieving satisfying
 % ZMP -> Developed in 1970, still quite used today ``
 % Walking, walking on uneven terrain, running
 
-Most approaches to humanoid walking nowadays use the Zero Moment Point ZMP stability criterium first analyzed by Vukobratović et al~\cite{Vukobratovic2001}.
+Most approaches to humanoid walking nowadays use the Zero Moment Point (ZMP) stability criterium first analyzed by Vukobratović et al~\cite{Vukobratovic2001}.
 Vukobratović proved that the ZMP criterium is a sufficient condition for dynamic stability.
 
 Sugihara developed stable online walking trajectories using an inverted pendulum model.
@@ -146,9 +146,9 @@ Pratt et al. introduced capture steps to control a robot during push recovery af
 \subsubsection{Offline and Online Learning of Motions}
 % Several specific motions required (standing-up)
 
-Since the development of walking gaits and push recovery motions for humanoid robots is non-trivial and many approaches require complex models of the dynamics of the robot, there has been continuous interest in optimizing motions or even learn motions from scratch using machine learning.
+Since the development of walking gaits and push recovery motions for humanoid robots is non-trivial and many approaches require complex models of the dynamics of the robot, there has been continuous interest in optimizing motions or even creating motions from scratch using machine learning.
 Many approaches to learning of motions have been explored by RoboCup teams and other researchers.
-Genetic algorithms~\cite{Huan2018}, Support vector machines SVMs~\cite{Wang2013}, artificial neural networks ANNs~\cite{Kim2012}, cerebellar model articulation controllers CMACs~\cite{Sabourin2005}, and reinforcement learning (RL)~\cite{Morimoto2004} have explored for learning trajectories for walking, push recovery, and other motions. 
+Genetic algorithms (GAs)~\cite{Huan2018}, Support vector machines (SVMs)~\cite{Wang2013}, artificial neural networks (ANNs)~\cite{Kim2012}, cerebellar model articulation controllers (CMACs)~\cite{Sabourin2005}, and reinforcement learning (RL)~\cite{Morimoto2004} have been explored for learning trajectories for walking, push recovery, and other motions.
 These approaches have led to some impressive results, in spite of the fact that applying these techniques to robotics domains is difficult since the perceptions, states, and actions of the robots are continuous, instead of the more common discreet representations (e.g., attribute-value representations).
 
 In recent years, many areas of Artificial Intelligence have been revolutionized by deep learning approaches.
@@ -161,7 +161,7 @@ Deep learning approaches in general have a higher sample complexity and the gene
 
 More recently several researchers have also applied online machine learning approaches, that is the system learns to optimize its motions during game play.
 The aim of these approaches is to reduce errors in the kinematic and dynamic model of the robot.
-Another motivation for online learning is to compensate for faults in the robot. For example, a robot that damages one of its hip ervos may learn to adapt its motion during the match, so that it can still help its team albeit less effective than if it were in perfect working order.
+Another motivation for online learning is to compensate for faults in the robot. For example, a robot that damages one of its hip servos may learn to adapt its motion during the match, so that it can still help its team albeit less effective than if it were in perfect working order.
 
 
 \subsection{Compliant Actuators and Soft Robotics}
@@ -229,7 +229,7 @@ Currently, most of the localization modules are based on particle filters which 
 While these approaches have proved their efficiency, recent advances in the SLAM domain suggest that localization based on factor graphs rather than filtering are more accurate~\cite{Strasdat2012}.
 To add another source of information for supporting robot localization especially when the robot is kidnapped, visual odometry can be considered.
 By utilizing the input of the camera system, the 6-DOF motion of the camera can be estimated. SVO 2.0 \cite{forster2014svo} and DSO \cite{engel2018direct} are two examples of these approaches for monocular vision.
-A sample output of DSO on the soccer field in illustrated in Fig.~\ref{FigDSO}.
+A sample output of DSO on the soccer field is illustrated in Fig.~\ref{FigDSO}.
 Both systems offer built-in support for integration into ROS and allow real-time processing of image data. 
 While DSO uses a direct approach based on pixel density, SVO 2.0 additionally considers features for analyzing visual input. 
 When testing these approaches with smooth camera movements over short periods of time, both can calculate stable and accurate motion traces. 
@@ -501,9 +501,9 @@ rulebook.
   to the competition.
 \item[2Y:] Changes which might require significant hardware investment for the
   teams or important modifications for the local organizers. These changes have
-  to be announced at least 20 months prior implementation.
+  to be announced at least 20 months prior to implementation.
 \item[4Y:] Major changes which require drastic modifications on robot design.
-  These changes shave to be announced at least 44 months prior to the
+  These changes have to be announced at least 44 months prior to the
   competition.
 \end{description}
 
@@ -643,8 +643,8 @@ and several changes have been made to the fields:
   detection and localization.
 \item Introduction of artificial turf has proven to be a major challenge for
   locomotion and has led to original hardware solutions to tackle the problem~\cite{Passault2015}.
-  It has also strongly reduced the distance traveled by the ball when kicking,
-  thus putting more constraints on shoots.
+  It has also strongly reduced the distance travelled by the ball when kicking,
+  thus putting more constraints on shots.
 \end{itemize}
 
 % Upcoming changes
