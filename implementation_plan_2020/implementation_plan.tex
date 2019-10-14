@@ -1,0 +1,128 @@
+\documentclass{article}
+
+\usepackage[
+    backend=bibtex, 
+    natbib=true,
+    style=alphabetic,
+    citestyle=alphabetic,
+    maxcitenames=1,
+    maxbibnames=99
+]{biblatex}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usepackage{url}
+\usepackage{rotating}
+\usepackage{graphicx}            % For pdf/bitmapped graphics files
+\usepackage[margin=3cm]{geometry}
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg}
+
+\usepackage{hyperref}
+\usepackage{todonotes}
+
+\begin{document}
+
+
+\begin{center}
+  {\Huge \bfseries
+    RoboCup Soccer: Humanoid League
+    \vspace{\stretch{1}}\\
+    \rule{\textwidth}{0.1cm}\\
+    \vspace{0.5cm}
+    Roadmap implementation plan 2020\\
+    \vspace{0.5cm}
+    \rule{\textwidth}{0.1cm}\\
+  }
+  \vspace{\stretch{4}}
+  {\bfseries \today}
+\end{center}
+
+\newpage
+
+\section{Introduction}
+
+For RoboCup 2020, we have multiple structural changes for the Humanoid League.
+The Teen Size class will merge within both Kid and Adult and several new leagues
+will be introduced.
+
+The leagues we intend to run are:
+
+\begin{description}[leftmargin=5em,style=nextline]
+\item[HSCK:] Humanoid Soccer Competition Kid, (merge of Humanoid Kid Size and
+  Humanoid Teen Size, will likely result in two divisions)
+\item[HSCA:] Humanoid Soccer Competition Adult, (merge of Humanoid Adult Size
+  and Humanoid Teen Size)
+\item[HOCK:] {Humanoid Open Competition Kid}
+\item[HOCA:] {Humanoid Open Competition Adult}
+\item[HRD:] {Humanoid Research Demonstration}
+\end{description}
+
+In this document we detail the implementation of our proposal in terms of
+trophies, certificates and impact on requirements for the venue.
+
+\section{Number of teams per league}
+
+\begin{table}[h]
+  \centering
+  \caption{\label{tab:nb_teams}Number of teams in 2019 and expected
+    participation for 2020}
+  \begin{tabular}{l | r | r}
+    League & 2019 & 2020\\
+    \hline
+    HSCK: & 16 & 20-30\\ 
+    HSCT: & 8 & \\ 
+    HSCA: & 5 & 5-8\\ 
+    HOCK: &  & 4-8\\
+    HOCA: &  & 2-4\\ 
+    HRD: &  & 0\\
+    \hline
+    \textbf{Total} & 29 & 31-50
+  \end{tabular}
+\end{table}
+
+
+\section{Trophies and certificates}
+
+The evolution of the number of trophies is presented in
+Table~\ref{tab:trophies}\todo{Confirm 2019 numbers}.
+The slight increase in the number of trophies is conditioned to having enough
+teams registering for all the leagues, which would lead to a global increase of
+the number of teams.
+\begin{table}[h]
+  \centering
+  \caption{\label{tab:trophies}Trophies evolution}
+  \begin{tabular}{l | r | r}
+    League & 2019 & 2020\\
+    \hline
+    HSCK: Main tournament & 3 & 6\\ 
+    HSCK: Technical Challenges & 1 & 1\\
+    HSCK: Drop-In & 1 & 1\\
+    HSCT: Main tournament & 2 & \\ 
+    HSCT: Technical Challenges & 1 & \\
+    HSCT: Drop-In & 1 & \\
+    HSCA: Main tournament & 3 & 3\\ 
+    HSCA: Technical Challenges & 1 & 1\\
+    HSCA: Drop-In & 1 & 1\\
+    HOCK: &  & 1\\
+    HOCA: &  & 1\\ 
+    HRD: &  & 0\\
+    Best Humanoid Award\footnote{Distribution of the Best Humanoid Award is conditioned to obtaining a sponsor for it} & 0 & 0\\
+    \hline
+    \textbf{Total} & 14 & 15
+  \end{tabular}
+\end{table}
+
+\section{Registration fees}
+
+\section{Requirements for the venue}
+
+
+
+\end{document}
