@@ -115,6 +115,7 @@ Therefore, the average number of trophies requested per team tend to decrease
 with our proposal.
 Since the \emph{Best Humanoid Award} is conditioned to obtaining a new sponsor,
 we do not consider it here.
+
 \begin{table}[h]
   \centering
   \caption{\label{tab:trophies}Trophies evolution}
@@ -139,7 +140,7 @@ we do not consider it here.
 \end{table}
 
 
-\todo{Certificate List}
+\todo{Should we include certificate list}
 
 \section{Registration fees}
 
@@ -153,7 +154,12 @@ league:
   registration since both are new leagues.
   Then, we can keep the same scheme with free team registration for new teams.
   In both cases, members still have to register.
-\item[HRD:] \todo{Content depending on award/not}
+\item[HRD:] Since it is a competition free event with little requirements,
+  we propose to use the following scheme for registration fees.
+  Team registration is free and members who already registered for another
+  RoboCup league do not need to pay additional fees.
+  Individual who are not registered in any league still need to pay their own
+  registration.
 \end{description}
 
 \section{Requirements for the venue}
@@ -167,6 +173,52 @@ leagues,
 therefore there should be a reasonable increase in terms of number of
 participants.
 
-\todo{Compare fields requirements + talk about space usage last year}
+At RoboCup 2019, we managed to run succesfully the competition despite the late
+announcement that we would have one field less than expected.
+However, the organization of the first three days was heavily impacted by the
+number of fields available:
+\begin{itemize}
+\item We had to use 45 minutes time slots instead of the usual one hour
+  time slots.
+\item On-site testing and practice for the teams was drastically reduced.
+\item Kid Size semi-finals had to occur the last day of competition which is
+  susceptible to decrease the quality of the finals.
+\end{itemize}
+In order to avoid similar issues, we definitely need more
+Therefore, we definitely need more fields than what was available during RoboCup
+2019 in order to run a successful event.
+Table~\ref{tab:requirements} compares the organization of the RoboCup 2019 with
+the expected elements for RoboCup 2020.
+It takes into account that HRD occurs on the large field in order to make sure
+there is sufficient space for the teams.
+
+% Time slots for the first 3 days:
+% - RR: Round-Robin
+% - KO: Knock-out game
+% - DI: Drop-In
+% - TC: Technical Challenge
+% 2019:
+% - Kid time slots: 24RR + 12KO + 10DI + 4TC -> 50
+% - Teen time slots: 12RR + 6KO + 8DI + 2TC -> 28
+% - Adult time slots: 10RR + 2KO + 8DI + 2TC -> 22
+% 2020:
+% - HSCK time slots (8DivA,16DivB): 20DI + 36RR + 18KO + 6TC -> 80
+% - HOCK time slots: 5-15DI
+% - HSCA time slots: 10RR + 2KO + 8DI + 2TC -> 22
+% - HOCA time slots: 4-8
+% - HRD  time slots: 4-10
+\begin{table}[h]
+  \centering
+  \caption{\label{tab:requirements}Venue requirements (time slots concern only
+    the first three days)}
+  \begin{tabular}{l|r|r|r|r|}
+    & \multicolumn{2}{c}{2019} & \multicolumn{2}{c}{2020}\\
+    & Time slots required & Nb fields & Time slots expected & Nb fields\\
+    \hline
+    Small field: $11m \cdot 8m$ & 78 & 4 & 85-95 & 5\\
+    Large field: $16m \cdot 11m$ & 22 & 1 & 30-40 & 2\\
+    % 4 persons working table: & 70 & 80-120
+  \end{tabular}
+\end{table}
 
 \end{document}
