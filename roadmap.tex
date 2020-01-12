@@ -13,6 +13,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{graphicx}
+\usepackage[normalem]{ulem}
+\usepackage{color}
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usetikzlibrary{positioning}
@@ -26,6 +28,15 @@
 \addbibresource{roadmap.bib}
 \usepackage{hyperref}
 
+% Uncomment for changes marked
+\newcommand{\removed}[1]{\textcolor{blue}{\sout{#1}}}
+\newcommand{\added}[1]{{\color{magenta}{#1}}}
+\DeclareRobustCommand{\hremoved}[1]{\texorpdfstring{\removed{#1}}{#1}}
+
+% Uncomment for changes not marked
+% \newcommand{\removed}[1]{}
+% \newcommand{\added}[1]{#1}
+
 \begin{document}
 
 
@@ -35,12 +46,12 @@
     \vspace{\stretch{1}}\\
     \rule{\textwidth}{0.1cm}\\
     \vspace{0.5cm}
-    \verb![DRAFT]! Roadmap\\
+    \verb![DRAFT]! Roadmap \added{from 2020 to 2050}\\
     \vspace{0.5cm}
     \rule{\textwidth}{0.1cm}\\
   }
   \vspace{\stretch{4}}
-  {\bfseries June 13th 2019}
+  {\bfseries \added{XXX 2020} \removed{June 13th 2019}}
 \end{center}
 
 \vspace{\stretch{2}}
@@ -51,8 +62,7 @@ RoboCup Humanoid Forum (for rule discussion and questions):\\
 \url{https://hl.forum.robocup.org}
 \vspace{\stretch{1}}\\
 RoboCup Humanoid League Home Pages:\\
-\url{https://www.robocuphumanoid.org/}\\
-\url{https://www.robocup.org/leagues/3}\\
+\url{https://humanoid.robocup.org}\\
 \vspace{\stretch{1}}
 
 \clearpage
@@ -100,6 +110,7 @@ An evolution of the rules consistent with the level of the teams and
 scientific breakthrough is crucial to improve the attractiveness of the league
 for both researchers and public.
 
+% Structure
 The structure of the documents is as
 follows. Section~\ref{sec:ScientificChallenges} introduces the scientific
 challenges related to the league and their importance in the games. The major
@@ -107,6 +118,15 @@ upcoming changes to the rules are presented in Section~\ref{sec:ShortTerm}. The
 global evolution of the leagues is discussed in Section~\ref{sec:LongTerm}
 through an event-triggered Roadmap and the history of changes which occurred
 since the creation of the league.
+
+% Updates
+\added{
+  The original document from 2019 has been updated in:
+  \begin{description}
+  \item[2020:] Update of short-term: upcoming changes
+  \end{description}
+}
+
 
 \section{\label{sec:ScientificChallenges}Scientific Challenges}
 
@@ -262,54 +282,10 @@ These approaches are generally based on the use of visual markers easily detecta
 %\subsection{Interaction with humans}
 %OPT: write about safety and natural aspect of soccer playing
 
+\newpage
+
 \section{\label{sec:ShortTerm}Short-term: upcoming changes}
 
-\subsection{RoboCup 2019 changes}
-
-The major rule changes for RoboCup 2019 are as following:
-
-\begin{itemize}
-\item Natural lightning conditions are now explicitly allowed.
-  It provides more flexibility for the local organizers and
-  helps to prepare for moving outdoors while stimulating research on perception.
-  Since SPL has already had some success in these conditions,
-  it is reasonable to expect teams to be able to adapt.
-\item Throw-in, corner kicks and goal kicks will be introduced.
-  This will make games closer to FIFA games,
-  thus making it easier for public to understand referee's interventions on the field.
-  It is also expected that this will encourage teamplay since stoppage of games
-  allow robots to position themselves.
-\item The rules with respect to pick-up of robots and penalties for invalid
-  behavior have been reworked to reduce the number of interventions from the referees.
-  It also encourages team to have robust robots playing during the whole game by
-  increasing constraints on penalized robots.
-\item The presence of an emergency stop button will be required but without
-  constraints on appearance.
-  It is a mandatory step toward allowing robots to play with humans.
-\item For the adult size league, the size of the field increases to
-  $14 \times 9$ meters (previously $9 \times 6$ meters)
-  and the games are now played 2 vs 2 robots.
-  These changes will allow teamplay options for this league and is taking into
-  account the fact that the locomotion speed for this league has significantly
-  evolved for the past few years.
-\end{itemize}
-
-There are also some minor adjustments:
-
-\begin{itemize}
-\item Time for repositioning during some stoppage of the game has been increased.
-  In 2018, several teams had trouble to reach their own half within the time
-  constraints after scoring a goal.
-  This led to frequent interventions from handlers which can be reduced by
-  slightly increasing the time allowed for robots to position autonomously
-  during stoppage of games.
-\item A new phrasing regarding constraints on foot design has been introduced to
-  reduce the risk of misunderstandings.
-\item The surface of teams markers is increased and the restriction regarding the 
-  location of the markers on the robot has been reduced.
-  This change will make it easier to detect opponents,
-  thus improving the chances of presenting satisfying gameplay to the public.
-\end{itemize}
 
 \subsection{RoboCup 2020 changes}
 
@@ -328,9 +304,9 @@ and finally propose a more flexible structure which can be easily adapted.
 
 The scheduled changes are as follows:
 \begin{itemize}
-\item Restructuring regular tournament
-\item Open Humanoid Leagues
-\item Humanoids Demo Events
+\item Restructuring regular tournament \added{refered to as Humanoid Soccer Competition (HSC)}
+\item \added{Humanoid Open Competition (HOC)} \removed{Open Humanoid Leagues}
+\item \added{Humanoid Research Demonstration (HRD)} \removed{Humanoid Demo events}
 \item Reduction of the handlers interventions
 \item Update of the technical challenges
 \end{itemize}
@@ -373,12 +349,28 @@ structure:
   are required to form combined teams in order to form a full team of robots.
 \item If there are fewer than 16 teams in the league after the merge procedure,
   all teams play in division A.
-  If there are more than 16 merged teams, repartition of the teams is based
-  on the result of the teams during Drop-In games and play-off games.
+  If there are more than 16 merged teams, \added{initial} repartition of the teams is based
+  on the result of the teams during Drop-In games \removed{and play-off games}.
+
+  \added{
+    The competition has the following structure:
+    The best $N$ teams are qualified for the first round-robin phase of
+    division A, other teams are qualified for the first round-robin in division B.
+
+    Both divisions plays separate round robins.
+    The lowest ranked teams per group in division A will have a playoff
+    with the highest ranked teams per group in division B.
+    The winners of the playoff games are qualified for the second round robin of
+    division A, the losers will play the second round robin in
+    division B.
+
+    Thereafter, division A and division B proceed independently of each other and 
+    each will normally consist of a round robin stage, followed by a number of knockout matches.
+  }
   \begin{description}
-  \item[Division A:] Best 6 teams + winners of play-offs for teams 7-10.
-  \item[Division B:] Losers from play-offs teams 7-10, teams 11-20,
-    winners of play-offs for teams 21-28.
+  \item[\removed{Division A:}] \removed{Best 6 teams + winners of play-offs for teams 7-10.}
+  \item[\removed{Division B:}] \removed{Losers from play-offs teams 7-10, teams 11-20,
+    winners of play-offs for teams 21-28.}
   \end{description}
 \end{enumerate}
 
@@ -389,14 +381,14 @@ on their teamplay during the year.
 Finally, this method ensures that the fields will have the appropriate number
 of robots, from the Drop-In to the regular tournaments.
 
-\subsubsection{Open Humanoid Leagues}
+\subsubsection{\added{Humanoid Open Competition} \hremoved{Open Humanoid Leagues}}
 
 The current implementation as led to some constraints on robot design~(passive
 sensors, size limitations) and complex rules in order to ensure fair games and
 to focus on human-like structure and perception.
 While this allows to bring the rules of the competition closer to the FIFA rules,
 it increases the entry cost for newcomers.
-In order to attract new teams, the Open Humanoid League will be opened.
+In order to attract new teams, the Humanoid Open Competition will be opened.
 This league will have a very limited number of rules and reduced hardware constraints.
 
 Since it is difficult to anticipate how many teams will apply for this league,
@@ -404,11 +396,12 @@ implementation details will be chosen depending on the teams interested in this
 competition.
 Trophies will be awarded to the teams according to the same rules as regular leagues.
 
-\subsubsection{Humanoids exhibition events}
+\subsubsection{\added{Humanoid Research Demonstration} \hremoved{Humanoid
+    exhibition events}}
 
 Increasing the diversity of approaches used inside the league and broadening the
 views of participants is important to avoid stagnation and uniformity in design.
-In order to reduce this risk, exhibition events will be introduced.
+In order to reduce this risk, research demonstration events will be introduced.
 
 Each year, research themes relevant to the league will be chosen by the TC.
 Both, teams from the RoboCup and research teams in robotics will be
@@ -443,17 +436,56 @@ From 2020, it will be mandatory for teams to have multiple robots in their team
 or to merge with other teams in the regular tournament.
 Therefore, we will start introducing technical challenges requiring collaboration between robots.
 
+\added{
+  For KidSize a collaborative localization challenge replaces the push-recovery.
+  This challenge requires a blinded robot to kick the ball to the goal based on
+  the information provided by another robot.%
+}
+
+
+\removed{
 One of the current challenges is based on performing a kick on the goal from a moving ball.
 Currently, the pass can be performed by either a robot or a human.
 In 2020, pass will have to be performed by a robot.
-By enforcing this as a technical challenge we intend to promote dynamic gameplay.
+By enforcing this as a technical challenge we intend to promote dynamic gameplay.%
+}
 
-The high-jump challenge will be changed toward a landing challenge which will
-focus on absorbing shocks and thus on soft robotics.
+The high-jump challenge is changed toward a \added{Parkour challenge where the robot
+has to go up on a platform and then go down without falling}
+\removed{landing challenge which will focus on absorbing shocks and thus on soft robotics}.
 
+\removed{
 On the same trend, a standing-up challenge will be introduced for adult size robots.
 This technical challenge will then evolve toward falling robots with the aim of removing
-robot handlers on the long-term.
+robot handlers on the long-term.%
+}
+
+\subsection{RoboCup 2021 changes}
+\added{
+  According to the votes of the league, this year should be a year with minor
+  changes or simple fixes to flaws in the rules.
+
+  The following changes are already planned according to the vote from the
+  teams:
+  \begin{itemize}
+  \item WiFi restriction changes: with the increasing collaboration between
+    robots and the complexity of the rules, robots are relying more on WiFi.
+    Therefore, a device need to be developed to ensure two key-points:
+    \begin{enumerate}
+    \item WiFi quality: a minimal bandwidth should be ensured at any location
+      in the field.
+    \item Respect of the rules: the bandwidth allowed for each robot should be
+      limited to ensure a fair competition and the robots not in play should not
+      be able to send messages.
+    \end{enumerate}
+  \end{itemize}
+
+  Other changes to be discussed/voted
+}
+
+\subsection{RoboCup 2023 changes}
+
+\added{To be discussed}
 
 
 \section{\label{sec:LongTerm}Long-term: event-triggered roadmap}
@@ -793,10 +825,63 @@ leagues and trustees. First opinions for the content were collected at RoboCup
 Special thanks go to Daniel Polani and Oskar Von Stryk for their support and
 their useful comments.
 
+\appendix
+
+\section{Past changes}
+
+\subsection{RoboCup 2019 changes}
+
+The major rule changes for RoboCup 2019 are as following:
+
+\begin{itemize}
+\item Natural lightning conditions are now explicitly allowed.
+  It provides more flexibility for the local organizers and
+  helps to prepare for moving outdoors while stimulating research on perception.
+  Since SPL has already had some success in these conditions,
+  it is reasonable to expect teams to be able to adapt.
+\item Throw-in, corner kicks and goal kicks will be introduced.
+  This will make games closer to FIFA games,
+  thus making it easier for public to understand referee's interventions on the field.
+  It is also expected that this will encourage teamplay since stoppage of games
+  allow robots to position themselves.
+\item The rules with respect to pick-up of robots and penalties for invalid
+  behavior have been reworked to reduce the number of interventions from the referees.
+  It also encourages team to have robust robots playing during the whole game by
+  increasing constraints on penalized robots.
+\item The presence of an emergency stop button will be required but without
+  constraints on appearance.
+  It is a mandatory step toward allowing robots to play with humans.
+\item For the adult size league, the size of the field increases to
+  $14 \times 9$ meters (previously $9 \times 6$ meters)
+  and the games are now played 2 vs 2 robots.
+  These changes will allow teamplay options for this league and is taking into
+  account the fact that the locomotion speed for this league has significantly
+  evolved for the past few years.
+\end{itemize}
+
+There are also some minor adjustments:
+
+\begin{itemize}
+\item Time for repositioning during some stoppage of the game has been increased.
+  In 2018, several teams had trouble to reach their own half within the time
+  constraints after scoring a goal.
+  This led to frequent interventions from handlers which can be reduced by
+  slightly increasing the time allowed for robots to position autonomously
+  during stoppage of games.
+\item A new phrasing regarding constraints on foot design has been introduced to
+  reduce the risk of misunderstandings.
+\item The surface of teams markers is increased and the restriction regarding the
+  location of the markers on the robot has been reduced.
+  This change will make it easier to detect opponents,
+  thus improving the chances of presenting satisfying gameplay to the public.
+\end{itemize}
 
 \newpage
 
 \printbibliography
+
+
+
 
 
 \end{document}
