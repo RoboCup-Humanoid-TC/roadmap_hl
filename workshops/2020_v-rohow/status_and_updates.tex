@@ -1,0 +1,219 @@
+% Suggested Viewer : pympress
+\documentclass[xcolor=dvipsnames]{beamer}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{multimedia}
+
+\usetheme{Warsaw}
+
+% Enable the use of notes on second screen
+\usepackage{pgfpages}
+% \setbeameroption{show notes on second screen}
+%\graphicspath{...}
+
+\input{style.tex}
+\input{headpage.tex}
+
+
+\title{Roadmap}
+
+\subtitle{Current status and upcoming changes}
+
+\author[L. Hofer \& M. Paetzel]{Ludovic Hofer\\Maike Paetzel}
+
+\newcommand{\presentationdate}{
+  June 26th 2020
+}
+
+\institute{Institute}
+
+\begin{document}
+
+%TODO add link on first page?
+\begin{frame}[plain]
+  \maketitle
+\end{frame}
+\note{TODO}
+
+% \begin{frame}[plain]
+%   \tableofcontents
+% \end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Motivations for the update}
+  \begin{itemize}
+  \item Make link between scientific challenges and roadmap more explicit
+  \item Ensure that rules evolve along with robot capabilities
+  \item Allow teams to plan their development 
+  \item Create a maintainable document
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Structure of the new roadmap}
+  \begin{block}{Scientific challenges}
+    \begin{itemize}
+    \item Scientific context of the league
+    \item Research contributions from the league
+    \item Require a major update every 4 years
+    \end{itemize}
+  \end{block}
+  \begin{block}{Short-Term: Upcoming changes}
+    \begin{itemize}
+    \item Changes planned for the next 5 years
+    \end{itemize}
+  \end{block}
+  \begin{block}{Long-term: event-triggered roadmap}
+    \begin{itemize}
+    \item What are the remaining steps to win against humans?
+    \item Metrics: how are improvements and performance measured
+    \item Criteria required to take significant steps
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\section{Short term: upcoming changes}
+
+\begin{frame}{Implemented for 2020}
+  \begin{itemize}
+  \item Structural changes to the league
+    \begin{itemize}
+    \item TeenSize now plays in Kid and Adult
+    \item Division A/B
+    \item Combined teams
+    \end{itemize}
+  \item Autonomous placement for all robots
+  \item Humanoid Research Demonstration
+  \item Technical Challenges
+    \begin{itemize}
+    \item Kid: push-recovery $\rightarrow$ blindfolded robot challenge
+    \item High jump $\rightarrow$ Parkour challenge
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Planned for 2020, but canceled}
+  \begin{itemize}
+  \item Humanoid Open Competition
+  \item Technical Challenges
+    \begin{itemize}
+    \item Kick from moving ball: enforce that pass is performed by a robot
+    \item Adult: push-recovery $\rightarrow$ standing-up
+    \end{itemize}
+  \item Discussion: How do we manage the upcoming changes?
+    \begin{itemize}
+    \item Mandatory league vote before adding something
+    \item Can we revote on something that has been announced
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Planned for 2021}
+  \begin{itemize}
+  \item Being more explicit on network requirements
+    \begin{itemize}
+    \item WiFi quality: specification of a minimal bandwidth, anywhere on the field
+    \end{itemize}
+  \item Enforcing the rules more strictly
+    \begin{itemize}
+    \item Monitoring bandwidth of each team
+    \item Robots not in play should not be able to send messages
+    \end{itemize}
+  \item Discussion:
+    \begin{itemize}
+    \item Require significant development (any volunteer)
+    \item Risk that we set rules which can not be applied
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Discussion: Height limits}
+  \begin{itemize}
+  \item Concerns expressed
+    \begin{itemize}
+    \item Adult: Lowering min height is taking a step back
+    \item Kid: Having 40cm and 1.2m high robots in the same league is difficult
+    \end{itemize}
+  \item This rule has major impact on both leagues, how can we vote on that?
+    \begin{itemize}
+    \item More teams in Kid: unfair for Adult
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Discussion: Next major update}
+  \begin{itemize}
+  \item 2023 or 2024?
+  \item What content?
+  \end{itemize}
+\end{frame}
+
+\section{Long term: event-triggered roadmap}
+
+\begin{frame}{Metrics}
+  \begin{block}{Motion metrics}
+    Peak speed, ball approach duration, Kick properties (distance, accuracy, ...)
+  \end{block}
+  \begin{block}{Perception metrics}
+    Ball-localization, self-localization, opponent recognition
+  \end{block}
+  \begin{block}{Gameplay metrics}
+    Shots on goal, diving saves, nb robots on fields, Don't Mess Up Period (DMUP)
+  \end{block}
+  \begin{block}{Requirements}
+  Compare \textbf{ground truth} (labeled video) with \textbf{robots
+    prediction} (common protocol).
+  \end{block}
+\end{frame}
+
+\begin{frame}{Field dimensions and number of robots}
+  \begin{block}{Evolution planned}
+    \centering
+    \begin{tabular}{c|r c r|r c r}
+      \textbf{Robots} & \multicolumn{3}{c}{\textbf{Kid}} & \multicolumn{3}{c}{\textbf{Adult}}\\
+      \hline
+      2 & 4.5 & $\times$ & 3 & \textbf{14} & $\times$ & \textbf{9}\\
+      3 & 6 & $\times$ & 4 & 21 & $\times$ & 14\\   
+      4 & \textbf{9} & $\times$ & \textbf{6} & 32 & $\times$ & 21\\
+      6 & 14 & $\times$ & 9 & 43 & $\times$ & 32\\
+      8 & 21 & $\times$ & 14 & 65 & $\times$ & 43\\
+      11 & 32 & $\times$ & 21 & 105 & $\times$ & 70
+    \end{tabular}
+  \end{block}
+  \begin{block}{When is size increased?}
+    \begin{itemize}
+    \item Peak speed: 20s to cross the field.
+    \item Kick distance: at least half a field.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Discussion: Outdoor?}
+  \begin{itemize}
+  \item Critical to increase field dimensions and number of players
+  \item Gradual steps
+    \begin{itemize}
+    \item Outdoor with a roof first
+    \end{itemize}
+  \item Moving from artificial turf to real grass? Is it necessary?
+  \item When/how can we plan it? 
+    \begin{itemize}
+    \item Include preliminary testing through technical challenges?
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Discussion: Network related rules}
+\end{frame}
+
+\begin{frame}{Handlers and game duration}
+\end{frame}
+
+\begin{frame}{Gameplay rules}
+\end{frame}
+
+
+\end{document}
