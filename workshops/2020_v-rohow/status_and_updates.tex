@@ -169,6 +169,20 @@
   \end{block}
 \end{frame}
 
+\begin{frame}{About criteria and rule implementation}
+  \begin{block}{Shared success}
+    At least \textbf{3 teams} need to fit a criterion to consider that the step
+    is completed.
+  \end{block}
+  \begin{block}{Time to plan for participants and LOC}
+    When a step is completed, the associated change is triggered
+    \textbf{two years later}.
+  \end{block}
+\end{frame}
+%TODO add note that 3 teams need to reach criteria
+%TODO add note that there is a two years deadline between completion of the
+%criteria, and the effective change
+
 \begin{frame}{Field dimensions and number of robots}
   \begin{block}{Evolution planned}
     \centering
@@ -206,13 +220,40 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Discussion: Network related rules}
-\end{frame}
-
 \begin{frame}{Handlers and game duration}
+  \begin{block}{Adult: path to remove the handlers}
+    \begin{enumerate}
+    \item TC: Stand-Up (less than 10 seconds)
+    \item TC: Falling on hard ground
+    \end{enumerate}
+    Once robot can properly fall and stand-up, handlers will be removed
+  \end{block}
+
+  \begin{block}{Towards autonomy}
+    \begin{itemize}
+    \item Once DMUP > 3 min: harsher penalties for pick-up and service
+    \item When $\text{DMUP} > \frac{\text{halfTimeDuration}}{2}$: increase half
+      time duration:
+      \begin{itemize}
+      \item Steps: 15, 20, 30, 45 minutes.
+      \end{itemize}
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 \begin{frame}{Gameplay rules}
+  \begin{block}{Mandatory throw-in}
+    \begin{itemize}
+    \item Throw-in takes less than 10 seconds to be performed
+    \item Ball cross at least quarter of field length, before stopping
+    \end{itemize}
+  \end{block}
+  \begin{block}{Offside rule}
+    \begin{itemize}
+    \item Satisfying self and opponent localization ($\text{RMSE} < \frac{\text{fieldLength}}{50}$)
+    \item At least 6 robots per team
+    \end{itemize}
+  \end{block}
 \end{frame}
 
 
