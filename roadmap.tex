@@ -46,12 +46,12 @@
     \vspace{\stretch{1}}\\
     \rule{\textwidth}{0.1cm}\\
     \vspace{0.5cm}
-    \verb![DRAFT]! Roadmap \added{from 2020 to 2050}\\
+    \verb![DRAFT]! Roadmap \added{from 2022 to 2050}\\
     \vspace{0.5cm}
     \rule{\textwidth}{0.1cm}\\
   }
   \vspace{\stretch{4}}
-  {\bfseries \added{January 18th 2020} \removed{June 13th 2019}}
+  {\bfseries \added{March 21st 2022} \removed{January 18th 2020}}
 \end{center}
 
 \vspace{\stretch{2}}
@@ -120,12 +120,11 @@ through an event-triggered Roadmap and the history of changes which occurred
 since the creation of the league.
 
 % Updates
-\added{
   The original document from 2019 has been updated in:
   \begin{description}
   \item[2020:] Update of short-term: upcoming changes
+  \item[\added{2022:}] \added{Update of short-term: upcoming changes}
   \end{description}
-}
 
 
 \section{\label{sec:ScientificChallenges}Scientific Challenges}
@@ -287,205 +286,46 @@ These approaches are generally based on the use of visual markers easily detecta
 \section{\label{sec:ShortTerm}Short-term: upcoming changes}
 
 
-\subsection{RoboCup 2020 changes}
+\subsection{\added{RoboCup 2022 changes}}
 
-The process of updating the roadmap allowed the identification of immediate changes which
-could benefit the humanoid league.
-One of the most important element is the organization of the league. Since 2010,
-the league is composed of 3 leagues, KidSize, TeenSize and AdultSize.
-While this structure was adapted at that time, evolution of the field and of the
-teams at the RoboCup over the past years show that there are way for improvements.
+\added{As the last two RoboCup competitions were not held in person due to the Covid-19 pandemic, the following rule changes decided in previous years will take effect in 2022 for the first time:
 
-For RoboCup2020, we intend to bring major modification to the league structure
-in order to achieve the following objectives:
-allow more diversity in the league,
-increase the coherency of the structure with actual status of the competition
-and finally propose a more flexible structure which can be easily adapted.
-
-The scheduled changes are as follows:
 \begin{itemize}
-\item Restructuring regular tournament \added{refered to as Humanoid Soccer Competition (HSC)}
-\item \added{Humanoid Open Competition (HOC)} \removed{Open Humanoid Leagues}
-\item \added{Humanoid Research Demonstration (HRD)} \removed{Humanoid Demo events}
-\item Reduction of the handlers interventions
-\item Update of the technical challenges
+\item The tournament is divided into the Humanoid Soccer Competition (HSC) and Humanoid Research Demonstration (HRD).
+\item The HSC is divided into KidSize and AdultSize. Former TeenSize robots can now either participate in KidSize or AdultSize depending on their size.
+\item The HSC will start with a number of Drop-In games to determine the seeding into division A and B (if enough teams participate in a given size class) and the seeding for the Round Robin groups.
+\item Teams that are not able to provide enough robots for a full team will be asked to merge with another team after the Drop-In games and before the first Round Robin games start.
+\item All robots will have to perform autonomous placement, starting from the side of the field.
+\item For KidSize a collaborative localization challenge replaces the push-recovery Technical Challenge.
+\item A minimal WIFI bandwidth will be ensured at any location on the field. In addition, the maximum bandwidth each robot is allowed to use is strictly enforced.
 \end{itemize}
 
-This section starts by describing the changes and then summarize the impacts on
-organization.
-
-% TODO add emergency button (safe robotics) ?
-
-\subsubsection{Restructuring regular tournament}
-
-While the number of teams involved in the TeenSize league has globally increased
-since 2010, the height of the robots in this league is globally decreasing and
-entering the buffer zone between KidSize (max 90cm) and TeenSize(min 80cm).
-\begin{description}
-\item[RoboCup 2017:] 5 teams had robots larger than 90cm.
-\item[RoboCup 2018:] Only 1 team had a robot above 90cm (94cm).
-\item[RoboCup 2019:] According to the qualification material, all teams have
-  robots between 80 and 90cm.
-\end{description}
-
-In regard of these elements, we propose to integrate the small robots from
-TeenSize to the KidSize and the larger robots to the AdultSize.
-
-Increasing the number of participants in each league would also make it easier
-to separate the main league in two divisions, allowing experienced teams to have
-more competitive games and new teams to have a more interesting event.
-It would also be interesting to increase the average number of robots on
-the pitch without losing teams due to financial issues.
-Finally, while Drop-In games have triggered the interest of multiple teams,
-some teams find that it overloads the schedule, especially during the knock-out
-phases.
-
-In order to solve these problems, the tournament will use the following
-structure:
-\begin{enumerate}
-\item The tournament will start by all the Drop-In games. This phase will
-  require only one robot per team.
-\item Teams who do not have the maximum number of robots allowed for their league
-  are required to form combined teams in order to form a full team of robots.
-\item If there are fewer than 16 teams in the league after the merge procedure,
-  all teams play in division A.
-  If there are more than 16 merged teams, \added{initial} repartition of the teams is based
-  on the result of the teams during Drop-In games \removed{and play-off games}.
-
-  \added{
-    The competition has the following structure:
-    The best $N$ teams are qualified for the first round-robin phase of
-    division A, other teams are qualified for the first round-robin in division B.
-
-    Both divisions plays separate round robins.
-    The lowest ranked teams per group in division A will have a playoff
-    with the highest ranked teams per group in division B.
-    The winners of the playoff games are qualified for the second round robin of
-    division A, the losers will play the second round robin in
-    division B.
-
-    Thereafter, division A and division B proceed independently of each other and 
-    each will normally consist of a round robin stage, followed by a number of knockout matches.
-  }
-  \begin{description}
-  \item[\removed{Division A:}] \removed{Best 6 teams + winners of play-offs for teams 7-10.}
-  \item[\removed{Division B:}] \removed{Losers from play-offs teams 7-10, teams 11-20,
-    winners of play-offs for teams 21-28.}
-  \end{description}
-\end{enumerate}
-
-This structure ensures that teams who have a single robot can participate and
-play a fair number of games.
-Teams with more resources are allowed to present a full team in order to work
-on their teamplay during the year.
-Finally, this method ensures that the fields will have the appropriate number
-of robots, from the Drop-In to the regular tournaments.
-
-\subsubsection{\added{Humanoid Open Competition} \hremoved{Open Humanoid Leagues}}
-
-The current implementation as led to some constraints on robot design~(passive
-sensors, size limitations) and complex rules in order to ensure fair games and
-to focus on human-like structure and perception.
-While this allows to bring the rules of the competition closer to the FIFA rules,
-it increases the entry cost for newcomers.
-In order to attract new teams, the Humanoid Open Competition will be opened.
-This league will have a very limited number of rules and reduced hardware constraints.
-
-Since it is difficult to anticipate how many teams will apply for this league,
-implementation details will be chosen depending on the teams interested in this
-competition.
-Trophies will be awarded to the teams according to the same rules as regular leagues.
-
-\subsubsection{\added{Humanoid Research Demonstration} \hremoved{Humanoid
-    exhibition events}}
-
-Increasing the diversity of approaches used inside the league and broadening the
-views of participants is important to avoid stagnation and uniformity in design.
-In order to reduce this risk, research demonstration events will be introduced.
-
-Each year, research themes relevant to the league will be chosen by the TC.
-Both, teams from the RoboCup and research teams in robotics will be
-invited and selected to present their work during the RoboCup.
-
-Demonstrations will not be limited to soccer playing humanoid robots, they will
-also include innovation on specific themes (e.g. soft robotics).
-The aim is to reserve space and time slots to present innovation in technology
-or research in order to stimulate the apparition of new ideas in the league.
-Constraints on the exhibitions will be avoided in order to allow original
-elements, no awards will be provided in order to keep it as a competition-free
-event.
-
-\subsubsection{Reducing handlers interventions}
-% Presence of handlers -> less autonomy/robustness + less interesting for public
-Presenting autonomous robots performing complex tasks is one of the strength of
-the RoboCup community.
-In this context, every opportunity to move robots on the field given to handlers
-reduces the constraints on autonomy and therefore the achievement.
-Moreover, interactions of the handlers with the robots reduce the interest from
-the public.
-
-Currently, handlers are allowed to place manually a striker and a goalie.
-In 2020, all robots will have to perform autonomous placement,
-starting from the side of the field.
-The aim of this change is to focus on autonomy and robustness in localization
-while reducing the frequency of human interventions.
-
-\subsubsection{Update of the technical challenges}
-
-From 2020, it will be mandatory for teams to have multiple robots in their team
-or to merge with other teams in the regular tournament.
-Therefore, we will start introducing technical challenges requiring collaboration between robots.
-
-\added{
-  For KidSize a collaborative localization challenge replaces the push-recovery.
-  This challenge requires a blinded robot to kick the ball to the goal based on
-  the information provided by another robot.%
+In addition, the following rule updates have been newly added to the rule book for 2022:
+\begin{itemize}
+\item The rule book of the physical and virtual competition are merged into a single rule book.
+\item Robots damaging the field or posing a thread to the spectators' safety will be removed form the field for a 30 second removal penalty.
+\item Teams must announce the usage of other teams' code and hardware during the qualification process.
+\item Relaxation of ball holding rules by allowing robots to hold a ball for longer and to increase the distance between multiple robots committing ball holding together.
+\item The game time will keep running during ready and set phase in both normal and knock-out matches.
+\end{itemize}
 }
 
-
-\removed{
-One of the current challenges is based on performing a kick on the goal from a moving ball.
-Currently, the pass can be performed by either a robot or a human.
-In 2020, pass will have to be performed by a robot.
-By enforcing this as a technical challenge we intend to promote dynamic gameplay.%
-}
-
-The high-jump challenge is changed toward a \added{Parkour challenge where the robot
-has to go up on a platform and then go down without falling}
-\removed{landing challenge which will focus on absorbing shocks and thus on soft robotics}.
-
-\removed{
-On the same trend, a standing-up challenge will be introduced for adult size robots.
-This technical challenge will then evolve toward falling robots with the aim of removing
-robot handlers on the long-term.%
-}
-
-\subsection{RoboCup 2021 changes}
-\added{
-  According to the votes of the league, this year should be a year with minor
-  changes or simple fixes to flaws in the rules.
-
-  The following changes are already planned according to the vote from the
-  teams:
-  \begin{itemize}
-  \item WiFi restriction changes: with the increasing collaboration between
-    robots and the complexity of the rules, robots are relying more on WiFi.
-    Therefore, a device need to be developed to ensure two key-points:
-    \begin{enumerate}
-    \item WiFi quality: a minimal bandwidth should be ensured at any location
-      in the field.
-    \item Respect of the rules: the bandwidth allowed for each robot should be
-      limited to ensure a fair competition and the robots not in play should not
-      be able to send messages.
-    \end{enumerate}
-  \end{itemize}
-
-  Other changes to be discussed/voted
-}
 
 \subsection{RoboCup 2023 changes (next major rule update scheduled)}
 
-\added{To be discussed}
+\added{
+In 2023, the next major rule update is scheduled to take place for the Humanoid Soccer Competition. This may, however, be postponed due to the Covid-19 pandemic. 
+
+During the 2022 rule voting, three changes for 2023 were already accepted by the league:
+\begin{itemize}
+\item Introduction of a software challenge inspired by a Technical Challenge in the SPL. The idea is for teams to present a piece of software they wrote and show how it can benefit other teams or the league as a whole. Judging this would be done either by all teams, a subset of teams, or the TC. The criteria could be how much benefit it brings, how well it is documented, or how easy it is to adapt to other teams' software stack. Further details will be developed for the 2023 rule book.
+\item Each kick-off and penalty shoot will be first signaled with a single whistle blow by the referee. The GameController Playing signal will be delayed by 15 seconds. 
+\item The support for the Mitecom team communication protocol will be dropped. In the future, only the Protobuf-based RoboCup-Protocol will be supported for team-communication between robots.
+\end{itemize}
+
+In addition, we keep working towards a new Humanoid Open Competition (HOC) with a limited number of rules and reduced hardware constraints to attract new teams to join the league.
+}
+
 
 
 \section{\label{sec:LongTerm}Long-term: event-triggered roadmap}
@@ -813,10 +653,10 @@ here the minimal frequency for updating the different sections of this document:
 \end{itemize}
 
 \section*{Acknowledgements}
-This version of the humanoid league roadmap is proposed by the Humanoid League
+This version of the humanoid league roadmap was originally proposed by the Humanoid League
 Technical Committee of RoboCup 2019 composed of Jacky Baltes, Hafez Farazi,
 Reinhard Gerndt, Ludovic Hofer, Maike Paetzel, Soroush Sadeghnejad and Michael
-Stattler.
+Stattler. The 2022 version was updated by the Technical Committee members Azer Babaev, Jacky Baltes, Reinaldo Bianchi, Reinhard Gerndt, Jasper G\"{u}ldenstein, Ludovic Hofer, Maike Paetzel-Pr\"{u}smann, and Alessandra Rossi.
 
 The roadmap was established based on multiple feedback from both, member of the
 leagues and trustees. First opinions for the content were collected at RoboCup
